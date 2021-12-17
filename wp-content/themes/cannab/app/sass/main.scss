@@ -1,0 +1,21 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/reset";
+@import "base/typography";
+@import "base/base";
+
+@import "includes/header";
+@import "includes/footer";
+
+@import "components/loader";
+@import "components/menu";
+@import "components/home-page";
+
+body,
+html {
+  position: relative;
+  font-family: Roboto,"Helvetica Neue",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,sans-serif;
+  scroll-behavior: smooth;
+}
