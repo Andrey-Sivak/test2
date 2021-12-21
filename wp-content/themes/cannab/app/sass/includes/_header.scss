@@ -1,5 +1,5 @@
 .header {
-  padding: 12px 0;
+  padding: 22px 0;
 
   &__wrap {
     display: flex;
@@ -11,55 +11,11 @@
   &__left {
     display: flex;
     align-items: center;
-
-    .search-form {
-      height: 30px;
-      display: flex;
-      align-items: stretch;
-
-      label {
-        width: 300px;
-        height: 100%;
-
-        input {
-          width: 100%;
-          display: block;
-          height: 100%;
-          font-size: 14px;
-          line-height: 16px;
-          padding: 8px;
-          border: 1px solid #E5E5E5;
-          border-radius: 4px 0px 0px 4px;
-
-          &::placeholder {
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            line-height: 16px;
-            color: #757575;
-          }
-        }
-      }
-    }
-
-    .search-submit {
-      cursor: pointer;
-      font-size: 0;
-      height: 100%;
-      display: block;
-      background-color: #05B9FF;
-      border-radius: 0px 4px 4px 0px;
-      border: 1px solid #05B9FF;
-      width: 32px;
-      background-repeat: no-repeat;
-      background-size: initial;
-      background-position: center;
-      background-image: url('../../img/header-search-icon.svg');
-    }
   }
 
   &__logo {
-    width: 275px;
-    margin-right: 46px;
+    width: 193px;
+    margin-right: 32px;
 
     img {
       display: block;
@@ -72,46 +28,33 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
-
   }
 
-  &__languages {
-    display: flex;
-    align-items: center;
-    margin-right: 45px;
-  }
-
-  &__lang {
-    width: 24px;
-    height: 16px;
+  &__icon {
+    background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
-
-    &:not(:last-of-type) {
-      margin-right: 16px;
-    }
-
-    &.en {
-      background-image: url('../../img/en-icon.png');
-    }
-
-    &.de {
-      background-image: url('../../img/de-icon.png');
-    }
+    width: 24px;
+    height: 24px;
+    display: block;
+    cursor: pointer;
+    margin-right: 24px;
   }
 
-  &__login,
-  &__wishlist {
-    padding-top: 27px;
-    color: #121212;
-    font-size: 16px;
-    margin-right: 32px;
-    line-height: 19px;
-    background-repeat: no-repeat;
-    background-size: initial;
-    background-position: center top;
+  .header__search {
+    position: relative;
+
+    &_icon {
+      background-image: url('../../img/header-search-icon.svg');
+    }
+
+    &_form-wrap {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+    }
   }
 
   &__login {
@@ -120,6 +63,10 @@
 
   &__wishlist {
     background-image: url('../../img/wish-icon.svg');
+  }
+
+  &__lang {
+    background-image: url('../../img/lang-icon.svg');
   }
 
   &__cart {

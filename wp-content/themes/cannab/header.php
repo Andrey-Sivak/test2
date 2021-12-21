@@ -113,19 +113,31 @@
         <img src="<?= get_field('logo', 'option')['url']; ?>"
              alt="img">
       </a>
-        <?php
-          get_search_form();
-        ?>
+
+      <?php if( has_nav_menu('header') ) :
+          wp_nav_menu(
+              array(
+                  'theme_location' => 'header',
+                  'menu_id'        => 'main-menu',
+                  'container_class' => 'header__menu',
+                  'menu_class' => 'menu',
+              )
+          ); ?>
+      <?php endif; ?>
+
     </div>
     <div class="header__right">
-      <div class="header__languages">
-        <a href="#" class="header__lang en" title="en"></a>
-        <a href="#" class="header__lang de" title="de"></a>
+      <div class="header__search">
+        <span class="header__icon header__search_icon"></span>
+        <div class="header__search_form-wrap">
+            <?php get_search_form(); ?>
+        </div>
       </div>
-      <a href="#" class="header__login">Login</a>
-      <a href="#" class="header__wishlist">Wishlist</a>
+      <a href="#" class="header__icon header__login"></a>
+      <a href="#" class="header__icon header__wishlist"></a>
+      <a href="#" class="header__icon header__lang"></a>
       <a class="header__cart" href="<?php echo wc_get_cart_url(); ?>"
-           title="<?php _e( 'View your shopping cart' ); ?>">
+         title="<?php _e( 'View your shopping cart' ); ?>">
         <span class="header__cart_amount">
           <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
         </span>
@@ -136,16 +148,3 @@
     </div>
   </div>
 </header>
-
-<?php if( has_nav_menu('header') ) :
-    wp_nav_menu(
-        array(
-            'theme_location' => 'header',
-            'menu_id'        => 'main-menu',
-            'container_class' => 'header__menu',
-            'menu_class' => 'menu',
-        )
-    ); ?>
-<?php endif; ?>
-
-
