@@ -114,16 +114,24 @@
              alt="img">
       </a>
 
-      <?php if( has_nav_menu('header') ) :
-          wp_nav_menu(
-              array(
-                  'theme_location' => 'header',
-                  'menu_id'        => 'main-menu',
-                  'container_class' => 'header__menu',
-                  'menu_class' => 'menu',
-              )
-          ); ?>
-      <?php endif; ?>
+      <a href="<?= get_home_url(); ?>" class="header__logo-mob-menu">
+        <img src="<?= get_field('logo', 'option')['url']; ?>"
+             alt="img">
+      </a>
+
+      <div class="header__menu_container">
+          <?php if( has_nav_menu('header') ) :
+              wp_nav_menu(
+                  array(
+                      'theme_location' => 'header',
+                      'menu_id'        => 'main-menu',
+                      'container_class' => 'header__menu',
+                      'menu_class' => 'menu',
+                  )
+              ); ?>
+          <?php endif; ?>
+        <span class="close"></span>
+      </div>
 
     </div>
     <div class="header__right">
@@ -145,6 +153,10 @@
           <?php echo WC()->cart->get_cart_total(); ?>
         </span>
       </a>
+
+      <span class="mob-menu-btn">
+        <span class="mob-menu-btn-inner"></span>
+      </span>
     </div>
   </div>
 </header>

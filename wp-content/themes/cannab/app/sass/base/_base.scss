@@ -2,9 +2,14 @@
   max-width: $container;
   margin: 0 auto;
 
-  @include response-to(large) {
+  @include response-to(huge) {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  @include response-to(small) {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 

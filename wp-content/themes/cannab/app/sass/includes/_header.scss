@@ -1,6 +1,10 @@
 .header {
   padding: 22px 0;
 
+  @include response-to(small) {
+    padding: 5px 0 10px;
+  }
+
   &__wrap {
     display: flex;
     width: 100%;
@@ -17,10 +21,43 @@
     width: 193px;
     margin-right: 32px;
 
+    @include response-to(large) {
+      margin-right: 25px;
+    }
+
+    @include response-to(small) {
+      width: 93px;
+    }
+
     img {
       display: block;
       max-width: 100%;
       height: auto;
+    }
+
+    &-mob-menu {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 20px;
+      top: 50px;
+      transform: translateX(-120vw);
+      @include transition-ease;
+      width: 150px;
+
+      @include response-to(medium) {
+        display: block;
+
+        &.active {
+          transform: translateX(0);
+        }
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 
@@ -39,6 +76,16 @@
     display: block;
     cursor: pointer;
     margin-right: 24px;
+
+    @include response-to(large) {
+      margin-right: 15px;
+    }
+
+    @include response-to(small) {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
   }
 
   .header__search {
@@ -88,6 +135,12 @@
     justify-content: flex-end;
     padding-right: 16px;
 
+    @include response-to(small) {
+      width: 48px;
+      padding-left: 0;
+      background-position: center;
+    }
+
     &_amount {
       position: absolute;
       font-weight: 500;
@@ -97,6 +150,10 @@
       top: 5px;
       left: 39px;
       z-index: 1;
+
+      @include response-to(small) {
+        left: 32px;
+      }
 
       &:before {
         position: absolute;
@@ -116,6 +173,10 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 24px;
+
+      @include response-to(small) {
+        display: none;
+      }
     }
   }
 }

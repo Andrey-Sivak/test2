@@ -21,3 +21,14 @@ html {
   scroll-behavior: smooth;
   color: #121212;
 }
+
+body.admin-bar .header{
+  top:32px;
+}
+
+body #wpadminbar {
+
+  @include response-to(small) {
+    top: -50px;
+  }
+}
