@@ -1,0 +1,357 @@
+.posts {
+  margin-top: 20px;
+  width: 100%;
+
+  @include response-to(medium) {
+    margin-top: 0;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.post {
+  overflow: hidden;
+
+  p {
+    font-size: 16px;
+    line-height: 120%;
+    margin-bottom: 20px;
+
+    @include response-to(small) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &-item {
+    margin-bottom: 20px;
+    position: relative;
+    padding: 16px;
+    background-color: #fff;
+    width: 32%;
+    border-radius: 4px;
+    transition: all ease .3s;
+
+    @include response-to(medium) {
+      padding: 8px;
+    }
+
+    @include response-to(small) {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    &:hover {
+      box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    &.first {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 64px;
+      width: 100%;
+      border-radius: 0;
+      padding: 0;
+
+      @include response-to(medium) {
+        display: block;
+        margin-bottom: 32px;
+      }
+
+      &:hover {
+        box-shadow: unset;
+      }
+
+      .read-more {
+        margin-top: 24px;
+        color: #05B9FF;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        text-transform: uppercase;
+
+        @include response-to(medium) {
+          margin-top: 16px;
+        }
+      }
+
+      .read-more:hover {
+        color: #05B9FF;
+      }
+
+      .post__img {
+        flex: 0 0 730px;
+        height: 458px;
+        margin-right: 20px;
+
+        @include response-to(huge) {
+          flex: 0 0 45%;
+          align-items: flex-start;
+          height: auto;
+        }
+
+        @include response-to(medium) {
+          margin-bottom: 24px;
+          margin-right: 0;
+          display: block;
+        }
+
+        @include response-to(small) {
+          width: 100vw;
+          height: 250px;
+          margin-left: -15px;
+        }
+      }
+
+      .post__title {
+        font-size: 28px;
+        line-height: 44px;
+        margin-bottom: 24px;
+
+        @include response-to(medium) {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 16px;
+        }
+      }
+
+      .post_excerpt {
+        font-size: 22px;
+        line-height: 32px;
+
+        @include response-to(large) {
+          font-size: 20px;
+        }
+
+        @include response-to(medium) {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    overflow: hidden;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include response-to(large) {
+      height: 160px;
+    }
+
+    @include response-to(medium) {
+      height: 200px;
+      margin-bottom: 16px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      transition: all ease .3s;
+      transform: scale(1);
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 16px;
+    color: #000;
+    font-size: 22px;
+    line-height: 32px;
+    text-decoration: none;
+
+    @include response-to(medium) {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__main-link {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  &_excerpt {
+    color: #9B9B9B;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 5px!important;
+
+    @include response-to(medium) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__title-block {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 48px 48px 42px;
+    max-width: 1100px;
+    width: 100%;
+
+    @include response-to(small) {
+      position: static;
+      transform: unset;
+      padding: 0;
+    }
+
+    &_breadcrumbs {
+      display: flex;
+
+      @include response-to(medium) {
+        margin-bottom: 12px;
+      }
+
+      @include response-to(small) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &_breadcrumb {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+
+      &:last-of-type {
+        color: #9B9B9B;
+        margin-bottom: 0;
+
+        @include response-to(medium) {
+          font-size: 12px;
+          line-height: 16px;
+          margin-bottom: 12px;
+        }
+      }
+
+      &:not(:last-child) {
+        color: #05B9FF;
+        margin-right: 24px;
+      }
+
+      @include response-to(small) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &__caption {
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 56px;
+    color: #000;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 27px;
+
+    @include response-to(small) {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-single {
+
+    &__img {
+      position: relative;
+      z-index: 0;
+      margin-bottom: 16px;
+      height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 103vw;
+      margin-left: calc((100vw - 1530px) / -2);
+
+      @include response-to(huge) {
+        height: auto;
+      }
+
+      @include response-to(medium) {
+        margin-left: -15px;
+      }
+
+      @include response-to(small) {
+        height: 250px;
+        margin-bottom: 24px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__content {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 48px;
+      padding-right: 48px;
+      margin-top: -33px;
+      width: 100%;
+
+      @include response-to(huge) {
+        margin-top: 0;
+      }
+
+      @include response-to(medium) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.recent-posts-caption {
+  margin-bottom: 32px;
+  font-size: 24px;
+  line-height: 28px;
+
+  @include response-to(medium) {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+}
