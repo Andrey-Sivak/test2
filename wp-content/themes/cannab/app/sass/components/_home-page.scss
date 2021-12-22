@@ -52,7 +52,40 @@
     &__list {
       margin: 30px 0;
       display: flex;
+      justify-content: space-between;
     }
+
+    &__item {
+      width: 11.11%;
+      height: 200px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px -3px rgba(#000, .5);
+      overflow: hidden;
+      border-radius: 20px;
+      @include transition-ease;
+      color: #333;
+
+      &:hover {
+        background-color: #00b9ff;
+
+        .categories__item_title {
+          color: #fff;
+        }
+      }
+
+      &_title {
+        @include transition-ease;
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .random-products {
+    margin: 15px auto;
+    width: 100%;
   }
 
   .features {
@@ -181,4 +214,5 @@
       }
     }
   }
+
 }
