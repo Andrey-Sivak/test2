@@ -118,6 +118,21 @@
         font-size: 20px;
         font-weight: 700;
       }
+
+      &_img {
+        width: 70px;
+        height: 70px;
+        margin: 20px auto;
+        @include flex-center();
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 
@@ -221,10 +236,15 @@
         max-width: 100px;
         height: 100px;
         margin-right: 15px;
-        background-color: #333;
 
         @include response-to(small) {
           margin-right: 0;
+        }
+
+        img {
+          display: block;
+          max-width: 100%;
+          width: auto;
         }
       }
 

@@ -76,7 +76,7 @@ get_header();
                 foreach ($features as $feature) : ?>
                     <div class="features__item">
                         <figure class="features__item_img">
-                            <img src="<?= $feature['icon']['img']; ?>" alt="img">
+                            <img src="<?= $feature['icon']['url']; ?>" alt="img">
                         </figure>
                         <div class="features__item_content">
                             <p class="features__item_caption"><?= $feature['title']; ?></p>
