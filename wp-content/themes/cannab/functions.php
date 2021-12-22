@@ -51,6 +51,8 @@ if ( ! function_exists( 'cannab_setup' ) ) :
 		register_nav_menus(
 			array(
 				'header' => esc_html__( 'header', 'cannab' ),
+				'terms-policy' => esc_html__( 'terms-policy', 'cannab' ),
+				'quick-links' => esc_html__( 'quick-links', 'cannab' ),
 			)
 		);
 

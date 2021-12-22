@@ -33,17 +33,17 @@
 
   &__menu {
 
-    &_item {
+    li {
       margin-bottom: 10px;
-    }
 
-    &_link {
-      color: #000;
-      text-decoration: underline;
-      font-size: 14px;
+      a  {
+        color: #000;
+        text-decoration: underline;
+        font-size: 14px;
 
-      &:hover {
-        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }

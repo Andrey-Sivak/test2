@@ -18,43 +18,31 @@
     </div>
     <div class="footer__item">
       <p class="footer__item_caption">Quick Links</p>
-      <ul class="footer__menu">
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Catalog</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">FAQ</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">About us</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Signup / Login</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Create a store</a>
-        </li>
-      </ul>
+
+        <?php if( has_nav_menu('header') ) :
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'quick-links',
+                    'menu_id'        => 'quick-links-menu',
+                    'container_class' => 'footer__menu_wrap',
+                    'menu_class' => 'footer__menu',
+                )
+            ); ?>
+        <?php endif; ?>
     </div>
     <div class="footer__item">
       <p class="footer__item_caption">Terms & Policy</p>
-      <ul class="footer__menu">
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Terms & Conditions of Use</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Terms & Conditions of Sale</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Delivery Policy</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Privacy Policy</a>
-        </li>
-        <li class="footer__menu_item">
-          <a href="#" class="footer__menu_link">Return Policy</a>
-        </li>
-      </ul>
+
+        <?php if( has_nav_menu('header') ) :
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'terms-policy',
+                    'menu_id'        => 'terms-policy-menu',
+                    'container_class' => 'footer__menu_wrap',
+                    'menu_class' => 'footer__menu',
+                )
+            ); ?>
+        <?php endif; ?>
     </div>
     <div class="footer__item">
       <p class="footer__item_caption">Don’t miss the newest products</p>
