@@ -1,3 +1,83 @@
 .footer {
+  display: flex;
+  width: 100%;
+  padding: 35px 0;
+  align-items: flex-start;
+  justify-content: space-between;
 
+  &__item {
+    flex: 0 0 15%;
+
+    &:first-of-type,
+    &:last-of-type {
+      flex: 0 0 30%;
+    }
+
+    &:first-of-type {
+
+      .footer__item_caption {
+
+      }
+    }
+
+    &_caption {
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 25px;
+    }
+
+    &_text {
+      font-size: 14px;
+    }
+  }
+
+  &__menu {
+
+    &_item {
+      margin-bottom: 10px;
+    }
+
+    &_link {
+      color: #000;
+      text-decoration: underline;
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 44px;
+
+    &_input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 10px;
+      border: 1px solid #111;
+      border-right: unset;
+      font-size: 16px;
+      height: 100%;
+      flex: 60%;
+    }
+
+    &_btn {
+      @include flex-center();
+      height: 100%;
+      flex: 40%;
+      border: none;
+      border-radius: 0;
+      background-color: #5EB936;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
 }
