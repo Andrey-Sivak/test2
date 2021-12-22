@@ -17,11 +17,51 @@ get_header();
     <div class="container categories">
         <p class="categories__caption">Choose Category</p>
         <div class="categories__list">
+            <?php
+            $args = [
+                'taxonomy'     => 'product_cat',
+                'orderby'      => 'name',
+                'number' => 6,
+                'hide_empty'   => true,
+                ];
+            $all_categories = get_categories( $args );
+
+            foreach ($all_categories as $cat) :
+                $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+                $image_url = wp_get_attachment_url( $thumbnail_id );
+                ?>
+
+              <a href="#" class="categories__item">
+                <figure class="categories__item_img">
+                  <img src="<?= $image_url; ?>" alt="img">
+                </figure>
+                <p class="categories__item_title"><?= $cat->name; ?></p>
+              </a>
+
+            <?php endforeach; ?>
         </div>
     </div>
 
-    <div class="random-products">
-        <p class="random-products">Товары</p>
+    <div class="container random-products">
+        <div class="products">
+            <?php
+            $args = [
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'posts_per_page' => 4,
+                'orderby' => 'rand',
+            ];
+            $random_products = new WP_Query( $args );
+
+            if ( $random_products->have_posts() ):
+                while ( $random_products->have_posts() ): $random_products->the_post();
+                $product = wc_get_product( $random_products->post->ID );
+                wc_get_template_part( 'content', 'product' );
+                endwhile;
+                wp_reset_query();
+            endif;
+            ?>
+        </div>
     </div>
 
     <div class="features">
