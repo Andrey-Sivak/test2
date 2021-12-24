@@ -81,13 +81,21 @@ input[type="number"] {
             align-items: center; }
   .header__logo {
     width: 193px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 193px;
+        -ms-flex: 0 0 193px;
+            flex: 0 0 193px;
     margin-right: 32px; }
     @media (max-width: 1200px) {
       .header__logo {
         margin-right: 25px; } }
     @media (max-width: 767px) {
       .header__logo {
-        width: 93px; } }
+        width: 93px;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 93px;
+            -ms-flex: 0 0 93px;
+                flex: 0 0 93px; } }
     .header__logo img {
       display: block;
       max-width: 100%;
@@ -856,6 +864,9 @@ input[type="number"] {
       background-color: #00b9ff; }
       .home-page .categories__item:hover .categories__item_title {
         color: #fff; }
+      .home-page .categories__item:hover .categories__item_img {
+        -webkit-filter: invert(1);
+                filter: invert(1); }
     .home-page .categories__item_title {
       -webkit-transition: all ease-in-out .3s;
       transition: all ease-in-out .3s;

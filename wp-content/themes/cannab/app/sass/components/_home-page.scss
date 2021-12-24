@@ -110,6 +110,10 @@
         .categories__item_title {
           color: #fff;
         }
+
+        .categories__item_img {
+          filter: invert(1);
+        }
       }
 
       &_title {

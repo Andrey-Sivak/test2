@@ -19,6 +19,7 @@
 
   &__logo {
     width: 193px;
+    flex: 0 0 193px;
     margin-right: 32px;
 
     @include response-to(large) {
@@ -27,6 +28,7 @@
 
     @include response-to(small) {
       width: 93px;
+      flex: 0 0 93px;
     }
 
     img {
