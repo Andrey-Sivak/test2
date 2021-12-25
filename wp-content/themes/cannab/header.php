@@ -17,6 +17,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+  <link rel="preload" href="<?= get_template_directory_uri() . '/dist/fonts/rhicons.woff2?3oibrk'; ?>" as="font" type="font/woff2" crossorigin="crossorigin">
+
 	<?php wp_head(); ?>
 </head>
 

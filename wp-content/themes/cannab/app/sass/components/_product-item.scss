@@ -10,9 +10,8 @@
 
   .product {
     width: 24%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex: 0 24%;
-    padding: 1.5%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -20,6 +19,7 @@
     position: relative;
     @include transition-ease;
     min-width: 230px;
+    max-width: 240px;
 
     @include response-to(medium) {
       margin: 1%;
@@ -38,7 +38,6 @@
     }
 
     &:hover {
-      box-shadow: 0px 12px 32px rgba(229, 229, 229, .4);
 
       .add_to_cart_button {
         transform: translateX(-50%) translateY(-200px);
@@ -54,11 +53,12 @@
     .woocommerce-loop-product {
 
       &__title {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
         @include transition-ease;
-        height: 42px;
+        height: 50px;
         overflow: hidden;
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 24px;
         font-weight: normal;
 
         @include response-to(small) {
@@ -78,6 +78,10 @@
           height: 150px;
         }
 
+        .onsale {
+          display: none;
+        }
+
         img {
           max-height: 100%;
           width: auto;
@@ -89,12 +93,25 @@
     .price {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       font-size: 18px;
+      line-height: 24px;
       font-weight: bold;
 
       @include response-to(small) {
         font-size: 16px;
+      }
+
+      del {
+        order: 2;
+      }
+
+      ins {
+        order: 1;
+        margin-right: 9px;
+        font-weight: normal;
+        color: #999;
+        text-decoration: line-through;
       }
     }
 

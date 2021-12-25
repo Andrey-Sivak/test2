@@ -565,3 +565,39 @@ p.no-comments {
 .widget_price_filter .ui-slider-horizontal .ui-slider-range {
 	height: 100%;
 }
+ul.page-numbers{
+	flex-basis: 100%;
+	white-space: nowrap;
+	padding: 0;
+	clear: both;
+	border-right: 0;
+	margin: 1px;
+}
+ul.page-numbers li {
+	list-style: none !important;
+	text-align: center;
+	padding: 0;
+	float: left;
+}
+ul.page-numbers li a,
+ul.page-numbers li span{
+	margin: 0;
+	text-decoration: none;
+	line-height: 1em;
+	font-size: 1em;
+	font-weight: normal;
+	padding: .5em;
+	min-width: 2em;
+	display: block;
+}
+ul.page-numbers li span.current,
+ul.page-numbers li a:hover,
+ul.page-numbers li.active a,
+.page-link > span:not(.page-link-title) {
+	background: #f7f6f7;
+}
+
+body .woocommerce-pagination {
+	margin-top: 40px;
+	display: block;
+}

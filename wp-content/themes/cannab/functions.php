@@ -56,6 +56,15 @@ if ( ! function_exists( 'cannab_setup' ) ) :
 			)
 		);
 
+        register_sidebar(array(
+            'id' => 'wooshopsidebar',
+            'name' => esc_html__('Woocommerce shop sidebar', 'cannab'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<div class="title">',
+            'after_title' => '</div>',
+        ));
+
         /*
          * Switch default core markup for search form, comment form, and comments
          * to output valid HTML5.
@@ -146,6 +155,7 @@ function cannab_scripts() {
 	wp_style_add_data( 'cannab-style', 'rtl', 'replace' );
 
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/css/main.css', array(), _S_VERSION );
+    wp_enqueue_style( 'product-style', get_template_directory_uri() . '/css/wc-single-product.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cannab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'main-script', get_template_directory_uri() . '/dist/js/main.js', array('jquery'), _S_VERSION, true );
