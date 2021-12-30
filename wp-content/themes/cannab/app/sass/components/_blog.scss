@@ -16,7 +16,6 @@
 }
 
 .post {
-  overflow: hidden;
 
   p {
     font-size: 16px;
@@ -115,6 +114,9 @@
         font-size: 28px;
         line-height: 44px;
         margin-bottom: 24px;
+        white-space: unset;
+        text-overflow: unset;
+        overflow: unset;
 
         @include response-to(medium) {
           font-size: 18px;
@@ -177,6 +179,9 @@
     font-size: 22px;
     line-height: 32px;
     text-decoration: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     @include response-to(medium) {
       font-size: 18px;
@@ -216,7 +221,7 @@
     transform: translateX(-50%);
     background-color: #fff;
     padding: 48px 48px 42px;
-    max-width: 1100px;
+    max-width: 900px;
     width: 100%;
 
     @include response-to(small) {
@@ -275,7 +280,7 @@
     font-size: 40px;
     line-height: 56px;
     color: #000;
-    max-width: 1100px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -295,12 +300,10 @@
       z-index: 0;
       margin-bottom: 16px;
       height: 500px;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 103vw;
-      margin-left: calc((100vw - 1530px) / -2);
+      width: 100%;
 
       @include response-to(huge) {
         height: auto;
@@ -315,16 +318,73 @@
         margin-bottom: 24px;
       }
 
-      img {
+      &_img {
+        position: absolute;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /*img {
         display: block;
         max-width: 100%;
         width: 100%;
         height: auto;
+      }*/
+    }
+
+    &__wrap {
+      position: relative;
+
+      .cannab-product__desc_tabs-wrap {
+        top: 33px;
+
+        @include response-to(large) {
+          display: none;
+        }
+
+        .cannab-product__desc_tabs {
+          width: 184px;
+          padding-left: 0;
+          padding-top: 40px;
+          padding-right: 0;
+          box-shadow: unset;
+
+          &:before {
+            position: absolute;
+            content: 'Content';
+            text-transform: uppercase;
+            top: 0;
+            left: 0;
+            font-size: 20px;
+            line-height: 23px;
+            color: #000;
+          }
+        }
+
+        .cannab-product__desc_tab {
+          color: #999;
+          font-size: 16px;
+          line-height: 120%;
+          margin-bottom: 12px;
+        }
+
+        .caption {
+          margin-bottom: 16px;
+          text-transform: uppercase;
+
+        }
       }
     }
 
     &__content {
-      max-width: 1100px;
+      position: relative;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
       padding-left: 48px;

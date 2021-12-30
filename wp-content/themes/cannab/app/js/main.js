@@ -1,5 +1,58 @@
 'use strict';
 
+(function checkAge() {
+    const isAgeVerify = window.localStorage.getItem('age_verify') || null;
+
+    if (isAgeVerify) return;
+
+    const modal = `
+    <div class="age-modal">
+    <div class="age-modal__content">
+    <p class="age-modal_note">You are not old enough to view this content</p>
+    <figure class="age-modal__logo">
+    <img src="${homeUrl}/wp-content/uploads/2021/12/image-16-1.png"
+    width="255"
+     alt="img">
+</figure>
+<p class="age-modal__title">You must be over 21 years old to visit this site</p>
+<p class="age-modal__text">Please, verify your age</p>
+<div class="age-modal__btns">
+<a href="#" class="age-modal__btn enter">Yes, I am over 21 - <br>ENTER</a>
+<a href="#" class="age-modal__btn leave">No, I am under 21 - <br>LEAVE</a>
+</div>
+</div>
+</div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modal);
+    const enter = document.querySelector('.age-modal__btn.enter');
+    const leave = document.querySelector('.age-modal__btn.leave');
+    const modalEl = document.querySelector('.age-modal');
+    const note = document.querySelector('.age-modal_note');
+
+    modalEl.classList.add('active');
+
+    enter.addEventListener('click', verifyAge);
+    leave.addEventListener('click', noVerify);
+
+    function verifyAge(e) {
+        e.preventDefault();
+        window.localStorage.setItem('age_verify', 'true');
+        modalEl.classList.remove('active');
+        setTimeout(() => {
+            document.body.removeChild(modalEl);
+        }, 300);
+    }
+
+    function noVerify(e) {
+        e.preventDefault();
+        note.classList.add('active');
+    }
+})();
+
+import $ from 'jquery';
+import './slick.min.js';
+
 const mobileWidth = 767;
 let isMobile = checkWidth();
 
@@ -73,28 +126,8 @@ setTimeout(() => {
 
     if (!widget) return;
 
-    const foundProductsCount = document.querySelector('.wpc-posts-found-number');
     const categoriesList = [...document.querySelector('.wpc-filter-chips-list').children];
-
-    const foundProductsCountOut = document.querySelector('.archive-wrap_found .count');
-    const categoriesListOut = document.querySelector('.archive-wrap__header_bottom');
-
-    (function setProductsCount() {
-        if (foundProductsCount) {
-            foundProductsCountOut.innerHTML = foundProductsCount.innerHTML;
-            return;
-        }
-
-        let total = 0;
-        const categories = [...document.querySelectorAll('.wpc-filter-product_cat .wpc-term-count-value')];
-
-        categories.forEach(c => {
-            const value = parseInt(c.innerHTML);
-            total += value;
-        });
-
-        foundProductsCountOut.innerHTML = total;
-    })();
+    const categoriesListOut = document.querySelector('.archive-wrap__header_cats');
 
     (function setActiveCats() {
         if (!categoriesList.length) return;
@@ -149,7 +182,172 @@ setTimeout(() => {
     function switchSidebar(e) {
         e.preventDefault();
 
-        wrapper.classList.toggle('activeslide');
+        document.querySelector('.archive-container')
+            .classList.toggle('activeslide');
+    }
+})();
+
+(function reviewsSlider() {
+    if (isMobile) return;
+
+    const reviewsList = document.querySelector('.commentlist') || null;
+
+    if (!reviewsList) return;
+
+    $('.commentlist').slick({
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: `<span class="slider-arrow prev">
+<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.000226974 5L4.24323 0.757004L5.65723 2.172L2.82823 5L5.65723 7.828L4.24323 9.243L0.000226974 5Z"/>
+</svg>
+</span>`,
+        nextArrow: `<span class="slider-arrow next">
+<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.99977 5L1.75677 9.243L0.342773 7.828L3.17177 5L0.342773 2.172L1.75677 0.756996L5.99977 5Z"/>
+</svg>
+</span>`,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ],
+    });
+})();
+
+(function reviewForm() {
+    const form = document.querySelector('#review_form_wrapper') || null;
+    const btn = document.querySelector('#show-comment-form') || null;
+
+    if (!form || !btn) return;
+
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        form.classList.toggle('active');
+    })
+})();
+
+(function singleProductDescriptionTabs() {
+    if (isMobile) return;
+
+    const captions = document.querySelector('.cannab-product__desc_title') ||
+        document.querySelector('.post-single__content h2')
+        || null;
+
+    if (!captions) return;
+
+    const descTabsWrap = document.querySelector('.cannab-product__desc_tabs-wrap')
+        || document.querySelector('.post-single__wrap');
+    let captionList = [...document.querySelectorAll('.cannab-product__desc_title')];
+
+    if (!captionList.length) {
+        captionList = [...document.querySelectorAll('.post-single__content h2')];
+    }
+
+    console.log(captionList);
+
+    const tabs = document.createElement('div');
+    tabs.classList.add('cannab-product__desc_tabs');
+
+    captionList.forEach(c => {
+        const text = c.innerHTML;
+        const dataScroll = c.offsetTop;
+        c.dataset.scroll = dataScroll;
+        const item = document.createElement('span');
+        item.classList.add('cannab-product__desc_tab');
+        item.innerHTML = text;
+        item.dataset.scroll = dataScroll;
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            scrollTo(c);
+        });
+        tabs.appendChild(item);
+    });
+
+    descTabsWrap.appendChild(tabs);
+
+    function scrollTo(elem) {
+        const y = elem.getBoundingClientRect().top + window.scrollY - 150;
+
+        window.scroll({
+            top: y,
+            behavior: 'smooth'
+        });
+    }
+
+    /*var sections = $('.cannab-product__desc_title')
+        , nav = $('.cannab-product__desc_tabs-wrap')
+        , nav_height = nav.outerHeight();
+
+    $(window).on('scroll', function () {
+        var cur_pos = $(this).scrollTop();
+
+        sections.each(function() {
+            var top = $(this).offset().top - nav_height,
+                bottom = top + $(this).outerHeight();
+
+            if (cur_pos >= top && cur_pos <= bottom) {
+                const dataScroll = $(this).data('scroll');
+                const currentTab = nav.find(`.cannab-product__desc_tab[data-scroll="${dataScroll}"]`);
+
+                if (currentTab.hasClass('active')) return;
+
+                $('.cannab-product__desc_tab.active').removeClass('active');
+                currentTab.addClass('active');
+            }
+        });
+    });*/
+
+})();
+
+(function selectAmount() {
+
+    const select = jQuery('.variations select');
+
+    if (select.length === 0) return;
+
+    const unnecessaryPrice = $('p.price');
+
+    unnecessaryPrice.css('display', 'none');
+
+    select.select2({
+        minimumResultsForSearch: Infinity,
+    });
+})();
+
+(function selectOrder() {
+
+    const select = jQuery('select.orderby');
+
+    if (select.length === 0) return;
+
+    select.select2({
+        minimumResultsForSearch: Infinity,
+    });
+})();
+
+(function () {
+    const accordions = [...document.querySelectorAll('.cannab-product-accordion')];
+
+    accordions.forEach(a => a.addEventListener('click', accordion));
+
+    function accordion(e) {
+        if (e.target.classList.contains('cannab-product-accordion__header')) {
+            this.classList.toggle('active');
+
+            let content = this.querySelector('.cannab-product-accordion__text');
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
     }
 })();
 

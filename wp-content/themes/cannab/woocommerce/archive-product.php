@@ -36,24 +36,27 @@ if ($vendor_id) {
 
     <?php $display_type = '';?>
     <?php $display_type = woocommerce_get_loop_display_mode(); ?>
-
+  <div class="mobile-trigger-sidebar">
+    <div id="mobile-trigger-sidebar">
+      <i class="fa-sliders-v fal"></i> <?php esc_html_e('Filter', 'cannab'); ?>
+    </div>
+  </div>
     <div class="container">
         <?php do_action( 'woocommerce_before_main_content' ); ?>
         <div class="archive-container">
             <?php get_sidebar('shop'); ?>
           <div class="archive-wrap" id="page-<?php the_ID(); ?>">
-            <div class="mobile-trigger-sidebar">
-              <div id="mobile-trigger-sidebar">
-                <i class="fa-sliders-v fal"></i> <?php esc_html_e('Filter', 'cannab'); ?>
-              </div>
-            </div>
-
             <div class="archive-wrap__header">
               <div class="archive-wrap__header_top">
-                <span class="archive-wrap_found"><span class="count">0</span> Items found</span>
+                <span class="archive-wrap_found"><?php woocommerce_result_count(); ?></span>
               </div>
 
               <div class="archive-wrap__header_bottom">
+                <div class="archive-wrap__header_cats"></div>
+                <div class="archive-wrap__header_order">
+                  <p class="archive-wrap__header_order-note">Sort by:</p>
+                    <?php woocommerce_catalog_ordering(); ?>
+                </div>
               </div>
             </div>
 

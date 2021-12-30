@@ -1,5 +1,12 @@
 .header {
-  padding: 22px 0;
+  padding: 12px 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #E5E5E5;
+  z-index: 100;
 
   @include response-to(small) {
     padding: 5px 0 10px;
@@ -27,8 +34,9 @@
     }
 
     @include response-to(small) {
-      width: 93px;
-      flex: 0 0 93px;
+      width: 130px;
+      flex: 0 0 130px;
+      margin-right: 0;
     }
 
     img {

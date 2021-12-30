@@ -4,11 +4,23 @@
   justify-content: space-between;
   align-items: flex-start;
 
+  &.related {
+    display: block;
+  }
+
+  & > h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 14px;
+    font-weight: normal;
+  }
+
   @include response-to(medium) {
     justify-content: space-around;
   }
 
   .product {
+    padding: 10px 20px 20px;
     width: 24%;
     margin-bottom: 20px;
     flex: 0 24%;
@@ -38,9 +50,10 @@
     }
 
     &:hover {
+      box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.04);
 
       .add_to_cart_button {
-        transform: translateX(-50%) translateY(-200px);
+        transform: translateX(-50%) translateY(-133px);
         opacity: 1;
         z-index: 10;
       }
@@ -129,6 +142,10 @@
       border: 1px solid #05B9FF;
       text-transform: uppercase;
       color: #fff;
+
+      @include response-to(small) {
+        display: none;
+      }
     }
   }
 }

@@ -158,7 +158,7 @@ function cannab_scripts() {
     wp_enqueue_style( 'product-style', get_template_directory_uri() . '/css/wc-single-product.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'cannab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/dist/js/main.js', array('jquery'), _S_VERSION, true );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . '/dist/js/main.js', array('jquery', 'select2'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -210,3 +210,58 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'		=> false
     ));
 }
+
+function brand_register_taxonomy() {
+    register_taxonomy( 'brands', 'product',
+        array(
+            'labels'                => [
+                'name'              => 'Brands',
+                'singular_name'     => 'Brand',
+                'search_items'      => 'Search brands',
+                'all_items'         => 'All brands',
+                'view_item'         => 'View brands',
+                'parent_item'       => 'Parent brands',
+                'parent_item_colon' => 'Parent brands:',
+                'edit_item'         => 'Edit brands',
+                'update_item'       => 'Refresh brand',
+                'add_new_item'      => 'Add brand',
+                'new_item_name'     => 'Brands title',
+                'menu_name'         => 'Brands',
+            ],
+            'hierarchical' => true,
+            'sort' => true,
+            'args' => array( 'orderby' => 'term_order' ),
+            'show_in_rest'       => true,
+            'show_admin_column' => true
+        )
+    );
+}
+add_action( 'init', 'brand_register_taxonomy' );
+
+function effect_register_taxonomy() {
+    register_taxonomy( 'effects', 'product',
+        array(
+            'labels'                => [
+                'name'              => 'Effects',
+                'singular_name'     => 'Effect',
+                'search_items'      => 'Search effects',
+                'all_items'         => 'All effects',
+                'view_item'         => 'View effects',
+                'parent_item'       => 'Parent effects',
+                'parent_item_colon' => 'Parent effects:',
+                'edit_item'         => 'Edit effects',
+                'update_item'       => 'Refresh effect',
+                'add_new_item'      => 'Add effect',
+                'new_item_name'     => 'Effect title',
+                'menu_name'         => 'Effects',
+            ],
+            'hierarchical' => true,
+            'sort' => true,
+            'args' => array( 'orderby' => 'term_order' ),
+            'show_in_rest'       => true,
+            'show_admin_column' => true
+        )
+    );
+}
+add_action( 'init', 'effect_register_taxonomy' );
+

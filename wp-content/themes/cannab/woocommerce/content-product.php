@@ -50,6 +50,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
 	 */
+  woocommerce_template_loop_rating();
 	do_action( 'woocommerce_shop_loop_item_title' );
 
 	/**
@@ -58,25 +59,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_rating - 5
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
-  $rating_count = $product->get_rating_count();
-  $review_count = $product->get_review_count();
-  $average      = $product->get_average_rating();
-
-  if ( $rating_count > 0 ) : ?>
-
-    <div class="woocommerce-product-rating">
-        <?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
-        <?php if ( comments_open() ) : ?>
-            <?php //phpcs:disable ?>
-          <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a>
-            <?php // phpcs:enable ?>
-        <?php endif ?>
-    </div>
-
-  <?php endif;
-
+//	do_action( 'woocommerce_after_shop_loop_item_title' );
+  woocommerce_template_loop_price();
 	/**
 	 * Hook: woocommerce_after_shop_loop_item.
 	 *

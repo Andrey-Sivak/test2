@@ -13,6 +13,9 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+  <script>
+    let homeUrl = '<?= get_home_url(); ?>';
+  </script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -108,6 +111,23 @@
   </style>
 </div>
 
+<div class="age-modal">
+  <div class="age-modal__content">
+    <p class="age-modal_note">You are not old enough to view this content</p>
+    <figure class="age-modal__logo">
+      <img src="<?= get_home_url(); ?>/wp-content/uploads/2021/12/image-16-1.png"
+           width="255"
+           alt="img">
+    </figure>
+    <p class="age-modal__title">You must be over 21 years old to visit this site</p>
+    <p class="age-modal__text">Please, verify your age</p>
+    <div class="age-modal__btns">
+      <a href="#" class="age-modal__btn enter">Yes, I am over 21 - <br>ENTER</a>
+      <a href="#" class="age-modal__btn leave">No, I am under 21 - <br>LEAVE</a>
+    </div>
+  </div>
+</div>
+
 <header class="header">
   <div class="container header__wrap">
     <div class="header__left">
@@ -143,7 +163,7 @@
             <?php get_search_form(); ?>
         </div>
       </div>
-      <a href="#" class="header__icon header__login"></a>
+      <a href="/my-account" class="header__icon header__login"></a>
       <a href="#" class="header__icon header__wishlist"></a>
       <a href="#" class="header__icon header__lang"></a>
       <a class="header__cart" href="<?php echo wc_get_cart_url(); ?>"

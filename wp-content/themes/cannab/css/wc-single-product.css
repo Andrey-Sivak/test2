@@ -59,6 +59,7 @@
 
 /* '' */
 nav.woocommerce-breadcrumb {
+  margin-top: 20px;
   color: #121212 !important;
   font-size: 16px;
   line-height: 18.75px; }
@@ -738,34 +739,6 @@ form.cart {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 623px; }
-  #commentform .comment-form-rating {
-    order: 1;
-    flex: 0 100%;
-    width: 100%; }
-    #commentform .comment-form-rating p.stars span {
-      width: auto;
-      height: 24px;
-      background: transparent; }
-      #commentform .comment-form-rating p.stars span a[class^="star-"] {
-        float: none;
-        top: unset;
-        left: unset;
-        height: auto;
-        color: transparent;
-        position: relative;
-        width: auto; }
-        #commentform .comment-form-rating p.stars span a[class^="star-"]:before {
-          content: '\e800';
-          font-size: 24px;
-          color: #9B9B9B; }
-        #commentform .comment-form-rating p.stars span a[class^="star-"].active, #commentform .comment-form-rating p.stars span a[class^="star-"]:hover, #commentform .comment-form-rating p.stars span a[class^="star-"].sub-active {
-          background: transparent; }
-          #commentform .comment-form-rating p.stars span a[class^="star-"].active:before, #commentform .comment-form-rating p.stars span a[class^="star-"]:hover:before, #commentform .comment-form-rating p.stars span a[class^="star-"].sub-active:before {
-            content: '\e801';
-            color: #05B9FF; }
-        #commentform .comment-form-rating p.stars span a[class^="star-"].star-1.active:before {
-          content: '\e801';
-          color: #05B9FF; }
   #commentform .comment-form-author, #commentform .comment-form-email {
     flex: 0 49%;
     width: 50%;

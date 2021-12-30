@@ -1,3 +1,6 @@
+@import "libs/slick";
+@import "libs/select2";
+
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
@@ -15,6 +18,7 @@
 @import "components/home-page";
 @import "components/blog";
 @import "components/archive";
+@import "components/single-product";
 
 body,
 html {
@@ -28,9 +32,129 @@ body.admin-bar .header{
   top:32px;
 }
 
+body {
+  padding-top: 72px;
+
+  @include response-to(small) {
+    padding-top: 64px;
+  }
+}
+
 body #wpadminbar {
 
   @include response-to(small) {
     top: -50px;
+  }
+}
+
+nav.woocommerce-breadcrumb {
+
+  @include response-to(small) {
+    font-size: 12px!important;
+    line-height: 16px!important;
+  }
+}
+
+.age-modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  @include flex-center();
+  z-index: -1;
+  opacity: 0;
+  background-color: transparent;
+  @include transition-ease;
+
+  &.active {
+    z-index: 1000;
+    opacity: 1;
+    background-color: rgba(#000, .7);
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 20px;
+  }
+
+  &__logo {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-top: 32px;
+    text-align: center;
+    line-height: 1.15;
+    font-size: 24px;
+  }
+
+  &__text {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__btns {
+    margin-top: 32px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    display: block;
+    text-align: center;
+    width: 48%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: 700;
+    line-height: 20px;
+
+    &.enter {
+      color: #fff;
+      background-color: #05B9FF;
+    }
+
+    &.leave {
+      border: 1px solid #11111166;
+      background-color: #fff;
+    }
+  }
+
+  &_note {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-100px);
+    @include transition-ease;
+    padding: 20px;
+    background-color: rgba(17,17,17,0.9);
+    top: 0;
+    color: #fff;
+    width: 100%;
+
+    &.active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+
+  @include response-to(small) {
+    overflow: hidden;
   }
 }
