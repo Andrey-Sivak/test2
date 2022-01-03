@@ -19,11 +19,14 @@
 @import "components/blog";
 @import "components/archive";
 @import "components/single-product";
+@import "components/checkout";
+@import "components/cart";
+@import "components/notice";
 
 body,
 html {
   position: relative;
-  font-family: Roboto,"Helvetica Neue",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,sans-serif;
+  font-family: 'Roboto',"Helvetica Neue",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,sans-serif;
   scroll-behavior: smooth;
   color: #121212;
 }

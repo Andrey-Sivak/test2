@@ -331,6 +331,93 @@ setTimeout(() => {
     });
 })();
 
+(function checkoutButton() {
+    const btn = document.querySelector('#place_order') || null;
+
+    if (!btn) return;
+    console.log(btn);
+    const fakeBtn = document.querySelector('.checkout__section-card_button');
+
+    fakeBtn.addEventListener('click', clickBtn);
+
+    function clickBtn(e) {
+        e.preventDefault();
+
+        const btn = document.querySelector('#place_order');
+        btn.click();
+    }
+})();
+
+(function cartCounter() {
+    const counter = document.querySelector('.product-price-quantity') || null;
+
+    if (!counter) return;
+
+    const counters = [...document.querySelectorAll('.product-price-quantity')];
+
+    counters.forEach(c => {
+        // const inputMaxValue = input.getAttribute('max') || null;
+        const buttons = [...document.querySelectorAll('.product-price-quantity__count')];
+
+        buttons.forEach(b => b.addEventListener('click', count));
+    });
+
+    function count(e) {
+        const target = e.target;
+        const input = target.parentElement.querySelector('input');
+
+        if (!target.classList.contains('product-price-quantity__count')) return;
+
+        const minus = target.classList.contains('minus');
+
+        if (minus && +input.value >= 1) {
+            input.value = +input.value - 1;
+            input.setAttribute('value', input.value);
+            // return;
+        }
+
+        if (!minus) {
+            input.value = +input.value + 1;
+            input.setAttribute('value', input.value);
+        }
+
+        const item_hash = input.getAttribute('name').replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
+        const item_quantity = input.value;
+        const currentVal = parseFloat(item_quantity);
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'text',
+            url: cart_qty_ajax.ajax_url,
+            data: {
+                action: 'qty_cart',
+                hash: item_hash,
+                quantity: currentVal
+            },
+            beforeSend: function () {
+                $('.cart-page > .loader').addClass('active');
+            },
+            success: function (data) {
+                $('.entry-content').html(data);
+                $('.cart-page > .loader').removeClass('active');
+
+                const counters = [...document.querySelectorAll('.product-price-quantity')];
+
+                counters.forEach(c => {
+                    // const inputMaxValue = input.getAttribute('max') || null;
+                    const buttons = [...document.querySelectorAll('.product-price-quantity__count')];
+
+                    buttons.forEach(b => b.addEventListener('click', count));
+                });
+            },
+            error: function (er) {
+              console.log(er);
+              $('.cart-page > .loader').removeClass('active');
+            }
+        })
+    }
+})();
+
 (function () {
     const accordions = [...document.querySelectorAll('.cannab-product-accordion')];
 

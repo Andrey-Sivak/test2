@@ -21,6 +21,9 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
   <link rel="preload" href="<?= get_template_directory_uri() . '/dist/fonts/rhicons.woff2?3oibrk'; ?>" as="font" type="font/woff2" crossorigin="crossorigin">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
