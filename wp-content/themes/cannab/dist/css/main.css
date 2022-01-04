@@ -2888,6 +2888,58 @@ input[type="number"] {
             font-weight: 500;
             font-size: 18px;
             line-height: 24px; } }
+    .cannab-product__top_main-info .quantity {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      border: 1px solid #EDEDED;
+      padding: 8px;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      border-radius: 4px; }
+      .cannab-product__top_main-info .quantity input {
+        display: block;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        width: 32px; }
+      .cannab-product__top_main-info .quantity .product-price-quantity__count {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        font-size: 18px;
+        line-height: 24px;
+        width: 24px;
+        height: 24px;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        cursor: pointer; }
     .cannab-product__top_main-info .single_add_to_cart_button {
       border: 1px solid #05B9FF;
       width: 300px;
@@ -4283,7 +4335,8 @@ input[type="number"] {
       .cart-page .woocommerce-cart-form .shop_table .product-remove:hover {
         text-decoration: underline; }
 
-.woocommerce-cart .entry-header {
+.woocommerce-cart .entry-header,
+.woocommerce-checkout .entry-header {
   display: none; }
 
 .woocommerce-message:before,
