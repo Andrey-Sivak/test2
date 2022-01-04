@@ -32,10 +32,6 @@ get_header(); ?>
 
         <?php do_action( 'woocommerce_after_main_content' ); ?>
 </div>
-<!--      </div>
-    </div>
-  </div>
-</div>-->
 <?php
 get_footer();
 
