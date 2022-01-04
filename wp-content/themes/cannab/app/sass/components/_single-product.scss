@@ -265,7 +265,30 @@
       }
 
       .quantity {
+        order: 2;
+        display: flex;
+        border: 1px solid #EDEDED;
+        padding: 8px;
+        align-items: center;
+        border-radius: 4px;
 
+        input {
+          display: block;
+          font-size: 18px;
+          line-height: 24px;
+          text-align: center;
+          width: 32px;
+        }
+
+        .product-price-quantity__count {
+          @include flex-center();
+          font-size: 18px;
+          line-height: 24px;
+          width: 24px;
+          height: 24px;
+          user-select: none;
+          cursor: pointer;
+        }
       }
 
       .single_add_to_cart_button {

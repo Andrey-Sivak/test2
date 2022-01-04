@@ -418,6 +418,34 @@ setTimeout(() => {
     }
 })();
 
+(function singleProductCounter() {
+    const counter = document.querySelector('.cannab-product .quantity') || null;
+
+    if (!counter) return;
+
+    const input = counter.querySelector('input');
+    const buttons = [...document.querySelectorAll('.product-price-quantity__count')];
+    const max = parseInt(input.getAttribute('max'));
+    const min = parseInt(input.getAttribute('min'));
+    const step = parseInt(input.getAttribute('step'));
+
+    buttons.forEach(b => b.addEventListener('click', count));
+
+    function count(e) {
+        const target = e.target;
+        const isMinus = target.classList.contains('minus');
+
+        if (isMinus && parseInt(input.value) > min) {
+            input.value = parseInt(input.value) - step;
+            return;
+        }
+
+        if (!isMinus) {
+            input.value = parseInt(input.value) + step;
+        }
+    }
+})();
+
 (function () {
     const accordions = [...document.querySelectorAll('.cannab-product-accordion')];
 
