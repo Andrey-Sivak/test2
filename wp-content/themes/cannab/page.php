@@ -12,7 +12,12 @@
  * @package cannab
  */
 
-get_header();
+if (is_checkout()) {
+    get_header('empty');
+} else {
+    get_header();
+}
+
 ?>
 <div class="wrapper">
 
