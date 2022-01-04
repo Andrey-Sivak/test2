@@ -3,10 +3,18 @@
   justify-content: center;
   align-items: flex-start;
 
+  @include response-to(medium) {
+    display: block;
+  }
+
   .woocommerce-checkout-review-order {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
+    @include response-to(huge) {
+      flex-direction: column;
+    }
   }
 
   .woocommerce-checkout-review-order-table {
@@ -22,6 +30,10 @@
     max-width: 409px;
     width: 100%;
     margin-right: 20px;
+
+    @include response-to(medium) {
+      max-width: unset;
+    }
 
     &_caption {
       font-size: 20px;
