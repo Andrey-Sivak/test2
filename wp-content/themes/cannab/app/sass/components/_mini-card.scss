@@ -1,0 +1,230 @@
+.mini--cart {
+  position: absolute;
+  max-width: 540px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  height: 100vh;
+  padding: 24px;
+  background-color: #fff;
+  transform: translateX(100vw);
+  @include transition-ease;
+
+  &__wrap {
+    position: fixed;
+    z-index: -10;
+    background-color: rgba(#000, .7);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    bottom: 0;
+    @include transition-ease;
+
+    &.active {
+      z-index: 100000;
+      opacity: 1;
+
+      .mini--cart {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .close {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    top: 32px;
+    right: 24px;
+    background-image: url('../../img/close-mini-cart.svg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  ul.cart_list {
+    max-height: 570px;
+    overflow-y: scroll;
+
+    @media(max-height: 910px) {
+      max-height: 450px;
+    }
+
+    @media(max-height: 790px) {
+      max-height: 350px;
+    }
+
+    @media(max-height: 650px) {
+      max-height: 250px;
+    }
+  }
+
+  &__caption {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+  }
+
+  &__items-count {
+    font-size: 20px;
+    line-height: 24px;
+    color: #999;
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
+
+    &_content {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &_img {
+      display: block;
+      flex: 0 0 108px;
+      height: 121px;
+      overflow: hidden;
+      @include flex-center();
+      margin-right: 20px;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &_content {
+
+    }
+
+    &_name {
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .variation {
+      display: flex;
+      width: 100%;
+      align-items: baseline;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 13px;
+      color: #999;
+
+      * {
+        color: inherit;
+        font-size: inherit;
+      }
+
+      dd {
+        margin-left: 5px;
+      }
+    }
+
+    &_coast {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .remove_from_cart_button {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 120%;
+    }
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+
+    .product-price-quantity__count {
+      width: 24px;
+      height: 24px;
+      font-size: 16px;
+      line-height: 20px;
+      @include flex-center();
+      cursor: pointer;
+    }
+
+    input {
+      width: 24px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  .woocommerce-mini-cart__buttons {
+
+    .wc-forward {
+      padding: 12px 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 12px;
+      background-color: #fff;
+      color: #05B9FF;
+      @include transition-ease;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: 1px solid #05B9FF;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+
+      &:hover {
+        color: #fff;
+        background-color: #05B9FF;
+      }
+    }
+
+    .checkout {
+      background-color: #05B9FF;
+      color: #fff;
+      
+      &:hover {
+        background-color: #fff;
+        color: #05B9FF;
+      }
+    }
+  }
+
+  .woocommerce-mini-cart__total {
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    align-items: baseline;
+    justify-content: space-between;
+
+    strong {
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .amount {
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}

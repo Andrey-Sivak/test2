@@ -194,3 +194,39 @@ if ( ! function_exists( 'cannab_woocommerce_cart_link' ) ) {
 		<?php
 	}
 }
+
+add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
+
+    ob_start();
+    ?>
+
+    <a class="header__cart" href="<?php echo wc_get_cart_url(); ?>"
+       title="<?php _e( 'View your shopping cart' ); ?>">
+        <span class="header__cart_amount">
+          <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+        </span>
+        <span class="header__cart_total">
+          <?php echo WC()->cart->get_cart_total(); ?>
+        </span>
+    </a>
+
+    <?php $fragments['a.header__cart'] = ob_get_clean();
+
+    return $fragments;
+
+} );
+
+add_filter( 'woocommerce_add_to_cart_fragments', function($fragments) {
+
+    ob_start();
+    ?>
+
+    <div class="mini--cart">
+        <?php woocommerce_mini_cart(); ?>
+    </div>
+
+    <?php $fragments['div.mini--cart'] = ob_get_clean();
+
+    return $fragments;
+
+} );
