@@ -35,11 +35,11 @@ if ( post_password_required() ) {
    <div class="cannab-product__top">
 
      <div class="cannab-product__mobile">
-         <?php $brands = get_field('product-brand');
-         if ($brands) : ?>
+         <?php $brands = get_the_terms( $product->get_id(), 'brands' );
+         if ($brands[0]) : ?>
            <div class="cannab-product__brand">
                <?php foreach ($brands as $brand) : ?>
-                 <p class="cannab-product__brand_item"><?= $brand['value']; ?></p>
+                 <p class="cannab-product__brand_item"><?= $brand->name; ?></p>
                <?php endforeach; ?>
            </div>
          <?php endif; ?>
@@ -55,11 +55,11 @@ if ( post_password_required() ) {
 
        <div class="cannab-product__desktop">
 
-       <?php $brands = get_field('product-brand');
-       if ($brands) : ?>
+       <?php $brands = get_the_terms( $product->get_id(), 'brands' );
+       if ($brands[0]) : ?>
          <div class="cannab-product__brand">
              <?php foreach ($brands as $brand) : ?>
-               <p class="cannab-product__brand_item"><?= $brand['value']; ?></p>
+               <p class="cannab-product__brand_item"><?= $brand->name; ?></p>
              <?php endforeach; ?>
          </div>
        <?php endif; ?>
@@ -67,25 +67,30 @@ if ( post_password_required() ) {
          <div class="cannab-product-accordion__wrap">
 
          </div>
-         
+
        <?php woocommerce_template_single_title(); ?>
-<!--       Sold by yaroslav’s shop  -->
        <?php
-//       $sold_by = WC_Product_Vendors_Utils::get_sold_by_link( $id );
-//       $vendor_name = $sold_by['name'];
-
-//       $meta_values = get_post_meta( $product->get_id() );
-//       var_dump($product->get_attributes());
-       ?>
-
+       $vendor_id = get_post_field( 'post_author', $product->get_id() );
+       $vendor = get_userdata( $vendor_id );
+       $vendor_name = $vendor->display_name; ?>
+           <div class="cannab-product__sold-by">
+       <?= sprintf( esc_html__( 'sold by %s', 'woocommerce' ), "<span class='cannab-product__sold-by_name'>$vendor_name</span>"); ?>
+           </div>
        <?php woocommerce_template_single_rating(); ?>
        </div>
 
-       <?php $effects = get_field('product-effects');
-       if ($effects) : ?>
+       <?php
+       $effects = get_the_terms( $product->get_id(), 'effects' );
+       if ($effects[0]) : ?>
        <div class="cannab-product__effects">
-         <?php foreach ($effects as $effect) : ?>
-         <p class="cannab-product__effects_item <?= $effect; ?>"><?= $effect; ?></p>
+         <?php foreach ($effects as $effect) :
+             $img_url = get_field('image', 'effects_' . $effect->term_id)['url']; ?>
+         <div class="cannab-product__effects_item">
+             <figure class="cannab-product__effects_img">
+                 <img src="<?= $img_url; ?>" alt="img">
+             </figure>
+             <p class="cannab-product__effects_name"><?= $effect->name; ?></p>
+         </div>
          <?php endforeach; ?>
        </div>
        <?php endif; ?>

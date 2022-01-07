@@ -329,6 +329,18 @@
     }
   }
 
+  &__sold-by {
+    font-size: 14px;
+    line-height: 16px;
+    color: #999;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+
+    &_name {
+      font-weight: bold;
+    }
+  }
+
   &__brand {
     display: flex;
     margin-bottom: 16px;
@@ -427,51 +439,24 @@
 
   &__effects {
     display: flex;
-    margin-bottom: 38px;
+    margin-bottom: 32px;
 
     @include response-to(small) {
       order: 2;
       margin-bottom: 0;
-      margin-top: 26px;
+      margin-top: 20px;
     }
 
     &_item {
-      padding-left: 40px;
       position: relative;
       color: #999999;
       font-size: 16px;
       line-height: 20px;
+      display: flex;
+      align-items: center;
 
       @include response-to(small) {
-        padding-left: 32px;
         font-size: 14px;
-      }
-
-      &.Anxiety:before {
-        background-image: url('../../img/Anxiety.svg');
-      }
-
-      &.Sleep:before {
-        background-image: url('../../img/Pain_relief.svg');
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 32px;
-        height: 32px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
-
-        @include response-to(small) {
-          width: 24px;
-          height: 24px;
-        }
       }
 
       &:not(:last-of-type) {
@@ -480,6 +465,20 @@
         @include response-to(small) {
           margin-right: 24px;
         }
+      }
+    }
+
+    &_img {
+      overflow: hidden;
+      @include flex-center();
+      margin-right: 8px;
+      width: 32px;
+      height: 32px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
     }
   }

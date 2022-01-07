@@ -3020,6 +3020,14 @@ input[type="number"] {
       .cannab-product__top_main-info .single_add_to_cart_button:hover {
         background-color: #05B9FF;
         color: #fff; }
+  .cannab-product__sold-by {
+    font-size: 14px;
+    line-height: 16px;
+    color: #999;
+    margin-bottom: 24px;
+    text-transform: uppercase; }
+    .cannab-product__sold-by_name {
+      font-weight: bold; }
   .cannab-product__brand {
     display: -webkit-box;
     display: -webkit-flex;
@@ -3104,7 +3112,7 @@ input[type="number"] {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 38px; }
+    margin-bottom: 32px; }
     @media (max-width: 767px) {
       .cannab-product__effects {
         -webkit-box-ordinal-group: 3;
@@ -3112,44 +3120,57 @@ input[type="number"] {
             -ms-flex-order: 2;
                 order: 2;
         margin-bottom: 0;
-        margin-top: 26px; } }
+        margin-top: 20px; } }
     .cannab-product__effects_item {
-      padding-left: 40px;
       position: relative;
       color: #999999;
       font-size: 16px;
-      line-height: 20px; }
+      line-height: 20px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
       @media (max-width: 767px) {
         .cannab-product__effects_item {
-          padding-left: 32px;
           font-size: 14px; } }
-      .cannab-product__effects_item.Anxiety:before {
-        background-image: url("../img/Anxiety.svg"); }
-      .cannab-product__effects_item.Sleep:before {
-        background-image: url("../img/Pain_relief.svg"); }
-      .cannab-product__effects_item:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 32px;
-        height: 32px;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-        display: block;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center; }
-        @media (max-width: 767px) {
-          .cannab-product__effects_item:before {
-            width: 24px;
-            height: 24px; } }
       .cannab-product__effects_item:not(:last-of-type) {
         margin-right: 60px; }
         @media (max-width: 767px) {
           .cannab-product__effects_item:not(:last-of-type) {
             margin-right: 24px; } }
+    .cannab-product__effects_img {
+      overflow: hidden;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      margin-right: 8px;
+      width: 32px;
+      height: 32px; }
+      .cannab-product__effects_img img {
+        display: block;
+        width: 100%;
+        height: auto; }
   .cannab-product__attributes {
     display: -webkit-box;
     display: -webkit-flex;
