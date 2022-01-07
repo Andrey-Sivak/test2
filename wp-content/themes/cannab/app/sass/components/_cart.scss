@@ -6,6 +6,10 @@
   position: relative;
   margin-bottom: 50px;
 
+  @include response-to(medium) {
+    flex-wrap: wrap;
+  }
+
   &__caption {
     margin-top: 32px;
     font-weight: 500;
@@ -37,6 +41,13 @@
     padding: 24px;
     margin-left: 20px;
 
+    @include response-to(medium) {
+      flex: 0 0 100%;
+      margin-left: 0;
+      max-width: 100%;
+      padding: 12px;
+    }
+
     h2 {
       font-weight: 500;
       font-size: 28px;
@@ -50,6 +61,17 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 24px;
+
+      &.woocommerce-shipping-totals {
+
+        @include response-to(small) {
+          flex-direction: column;
+
+          th {
+            margin-bottom: 10px;
+          }
+        }
+      }
     }
 
     td {
@@ -60,8 +82,23 @@
       vertical-align: baseline;
       font-weight: 400;
       font-size: 18px;
+      text-align: left;
       line-height: 24px;
       color: #999;
+    }
+
+    .shop_table {
+
+      @include response-to(small) {
+
+        &_responsive tr td::before {
+          content: '';
+        }
+
+        &_responsive tbody th {
+          display: block;
+        }
+      }
     }
 
     .order-total {
@@ -127,6 +164,10 @@
         height: 44px;
         border-bottom: 1px solid #E5E5E5;
 
+        @include response-to(small) {
+          width: 200px;
+        }
+
         &::placeholder {
           font-size: 14px;
           line-height: 20px;
@@ -180,7 +221,22 @@
     padding-top: 28px;
     flex: 0 0 730px;
 
+    @include response-to(large) {
+      flex: 0 0 600px;
+    }
+
+    @include response-to(medium) {
+      flex: 0 0 100%;
+    }
+
     .shop_table {
+
+      @include response-to(small) {
+
+        &_responsive tr td::before {
+          content: none;
+        }
+      }
 
       thead {
         display: none;
@@ -199,6 +255,11 @@
         display: block;
         height: 216px;
         margin-right: 20px;
+
+        @include response-to(small) {
+          flex: 0 0 108px;
+          height: 121px;
+        }
 
         a {
           @include flex-center();
@@ -221,12 +282,33 @@
           display: block;
           font-size: 24px;
           line-height: 32px;
+
+          @include response-to(small) {
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+          }
         }
 
         .variation {
           display: flex;
           align-items: center;
           margin-bottom: 24px;
+
+          @include response-to(small) {
+            margin-bottom: 13px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #999;
+
+            & * {
+              font-size: inherit;
+              line-height: inherit;
+              color: inherit;
+            }
+          }
 
           &-Vendor {
             margin-left: 0;
@@ -241,6 +323,12 @@
           display: flex;
           align-items: center;
           margin-bottom: 24px;
+
+          @include response-to(small) {
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 15px;
+          }
         }
 
         &-quantity {
@@ -250,6 +338,11 @@
           align-items: center;
           border-radius: 4px;
           margin-right: 16px;
+
+          @include response-to(small) {
+            order: 2;
+            margin-right: 0;
+          }
 
           &__count {
             @include flex-center();
@@ -278,6 +371,10 @@
         &-coast {
           font-size: 24px;
           line-height: 32px;
+
+          @include response-to(small) {
+            font-size: 20px;
+          }
         }
       }
 
@@ -288,6 +385,11 @@
         display: block;
         cursor: pointer;
         text-transform: uppercase;
+
+        @include response-to(small) {
+          text-align: left;
+          font-size: 12px;
+        }
 
         &:hover {
           text-decoration: underline;

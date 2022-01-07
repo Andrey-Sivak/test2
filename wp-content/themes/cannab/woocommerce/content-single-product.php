@@ -102,7 +102,7 @@ if ( post_password_required() ) {
         'pa_cbd-per-package' => 'CBD per package',
         'pa_thc-percent' => 'THC %',
         'pa_package-size' => 'Package size',
-        '' => 'CBD Size',
+        'pa_cbd-percent' => 'CBD Size',
     ];
 
     foreach ($attrs as $attr) :
