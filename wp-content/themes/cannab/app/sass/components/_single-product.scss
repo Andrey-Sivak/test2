@@ -772,7 +772,9 @@
         }
       }
 
-      .comment-form-comment {
+      .comment-form-comment,
+      .comment-form-author,
+      .comment-form-email {
         position: relative;
 
         label {
@@ -783,12 +785,63 @@
           left: 10px;
         }
 
-        textarea {
+        textarea,
+        input {
           border-radius: 4px;
           border: 1px solid #E5E5E5;
           display: block;
           width: 100%;
           padding: 20px 10px 10px;
+        }
+      }
+
+      .comment-form-cookies-consent {
+        margin-bottom: 15px;
+        
+        input {
+          position: absolute;
+          width: 0;
+          height: 0;
+          z-index: -1;
+          opacity: 0;
+
+          &:checked + label:after {
+            opacity: 1;
+          }
+        }
+        
+        label {
+          font-size: 14px;
+          color: #000;
+          position: relative;
+          display: block;
+          padding-left: 24px;
+
+          &:before,
+          &:after {
+            position: absolute;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            content: '';
+          }
+
+          &:before {
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid #999;
+          }
+
+          &:after {
+            opacity: 0;
+            border-radius: 2px;
+            width: 10px;
+            height: 10px;
+            background-color: #999;
+            left: 3px;
+          }
         }
       }
 
