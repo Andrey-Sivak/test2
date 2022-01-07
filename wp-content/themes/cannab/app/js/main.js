@@ -136,10 +136,12 @@ setTimeout(() => {
             if (cat !== 'Reset all') {
                 const catClasses = [...c.classList];
                 const classWithId = catClasses.filter(t => t.includes('wpc-chip-product_cat-'))[0];
-                const catId = classWithId.replace('wpc-chip-product_cat-', '');
-                const item = createCat(cat, catId);
+                if (classWithId) {
+                    const catId = classWithId.replace('wpc-chip-product_cat-', '');
+                    const item = createCat(cat, catId);
 
-                categoriesListOut.appendChild(item);
+                    categoriesListOut.appendChild(item);
+                }
             }
         });
 
