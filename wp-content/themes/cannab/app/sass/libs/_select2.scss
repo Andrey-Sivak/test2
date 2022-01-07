@@ -64,7 +64,7 @@
       -webkit-appearance: none; }
 
 .select2-dropdown {
-  background-color: #EDFFFE;
+  background-color: #fff;
   border: 1px solid #05B9FF;
   border-radius: 10px;
   box-sizing: border-box;
@@ -92,7 +92,7 @@
   -webkit-user-select: none; }
 
 .select2-results__option:hover {
-  background-color: #05B9FF;
+  background-color: #05B9FF!important;
 }
 
 .select2-results__option--selectable {

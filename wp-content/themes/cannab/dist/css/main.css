@@ -278,7 +278,7 @@
   -webkit-appearance: none; }
 
 .select2-dropdown {
-  background-color: #EDFFFE;
+  background-color: #fff;
   border: 1px solid #05B9FF;
   border-radius: 10px;
   box-sizing: border-box;
@@ -309,7 +309,7 @@
   -webkit-user-select: none; }
 
 .select2-results__option:hover {
-  background-color: #05B9FF; }
+  background-color: #05B9FF !important; }
 
 .select2-results__option--selectable {
   cursor: pointer; }
@@ -1107,6 +1107,15 @@ input[type="number"] {
 
 .woocommerce-checkout {
   padding-top: 0; }
+  .woocommerce-checkout > .select2-container {
+    -webkit-transform: translateY(-35px);
+        -ms-transform: translateY(-35px);
+            transform: translateY(-35px); }
+    @media (max-width: 767px) {
+      .woocommerce-checkout > .select2-container {
+        -webkit-transform: translateY(-50px);
+            -ms-transform: translateY(-50px);
+                transform: translateY(-50px); } }
 
 .footer {
   display: -webkit-box;
@@ -3455,20 +3464,66 @@ input[type="number"] {
           width: 100%; }
         .cannab-product__reviews #review_form_wrapper .comment-form-rating .stars a {
           font-size: 21px; }
-      .cannab-product__reviews #review_form_wrapper .comment-form-comment {
+      .cannab-product__reviews #review_form_wrapper .comment-form-comment,
+      .cannab-product__reviews #review_form_wrapper .comment-form-author,
+      .cannab-product__reviews #review_form_wrapper .comment-form-email {
         position: relative; }
-        .cannab-product__reviews #review_form_wrapper .comment-form-comment label {
+        .cannab-product__reviews #review_form_wrapper .comment-form-comment label,
+        .cannab-product__reviews #review_form_wrapper .comment-form-author label,
+        .cannab-product__reviews #review_form_wrapper .comment-form-email label {
           position: absolute;
           z-index: 2;
           top: 5px;
           font-size: 13px;
           left: 10px; }
-        .cannab-product__reviews #review_form_wrapper .comment-form-comment textarea {
+        .cannab-product__reviews #review_form_wrapper .comment-form-comment textarea,
+        .cannab-product__reviews #review_form_wrapper .comment-form-comment input,
+        .cannab-product__reviews #review_form_wrapper .comment-form-author textarea,
+        .cannab-product__reviews #review_form_wrapper .comment-form-author input,
+        .cannab-product__reviews #review_form_wrapper .comment-form-email textarea,
+        .cannab-product__reviews #review_form_wrapper .comment-form-email input {
           border-radius: 4px;
           border: 1px solid #E5E5E5;
           display: block;
           width: 100%;
           padding: 20px 10px 10px; }
+      .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent {
+        margin-bottom: 15px; }
+        .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent input {
+          position: absolute;
+          width: 0;
+          height: 0;
+          z-index: -1;
+          opacity: 0; }
+          .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent input:checked + label:after {
+            opacity: 1; }
+        .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent label {
+          font-size: 14px;
+          color: #000;
+          position: relative;
+          display: block;
+          padding-left: 24px; }
+          .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent label:before, .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent label:after {
+            position: absolute;
+            display: block;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+            content: ''; }
+          .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent label:before {
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid #999; }
+          .cannab-product__reviews #review_form_wrapper .comment-form-cookies-consent label:after {
+            opacity: 0;
+            border-radius: 2px;
+            width: 10px;
+            height: 10px;
+            background-color: #999;
+            left: 3px; }
       .cannab-product__reviews #review_form_wrapper .form-submit input.submit {
         border: 1px solid #05B9FF;
         width: 150px;
@@ -3804,6 +3859,8 @@ input[type="number"] {
       display: none; }
     .checkout__section .payment_method_vivawallet_native > p {
       margin-bottom: 18px; }
+    .checkout__section .woocommerce-input-wrapper {
+      display: block; }
     .checkout__section #billing_country_field,
     .checkout__section #shipping_country_field {
       display: -webkit-box;

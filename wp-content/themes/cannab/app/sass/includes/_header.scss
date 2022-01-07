@@ -216,4 +216,12 @@
 
 .woocommerce-checkout {
   padding-top: 0;
+
+  & > .select2-container {
+    transform: translateY(-35px);
+
+    @include response-to(small) {
+      transform: translateY(-50px);
+    }
+  }
 }
