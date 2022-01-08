@@ -12,7 +12,7 @@
  * @package cannab
  */
 
-if (is_checkout()) {
+if (is_checkout() || is_account_page()) {
     get_header('empty');
 } else {
     get_header();
