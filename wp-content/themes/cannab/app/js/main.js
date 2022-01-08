@@ -251,8 +251,6 @@ setTimeout(() => {
         captionList = [...document.querySelectorAll('.post-single__content h2')];
     }
 
-    console.log(captionList);
-
     const tabs = document.createElement('div');
     tabs.classList.add('cannab-product__desc_tabs');
 
@@ -337,7 +335,6 @@ setTimeout(() => {
     const btn = document.querySelector('#place_order') || null;
 
     if (!btn) return;
-    console.log(btn);
     const fakeBtn = document.querySelector('.checkout__section-card_button');
 
     fakeBtn.addEventListener('click', clickBtn);
@@ -481,8 +478,6 @@ setTimeout(() => {
 
     function showMiniCart(e) {
         e.preventDefault();
-
-        console.log(mimiCartWrap);
 
         mimiCartWrap.classList.add('active');
     }
