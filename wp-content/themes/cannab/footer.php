@@ -9,9 +9,10 @@
  * @package cannab
  */
 
+$empty_footer = is_checkout() || is_account_page();
 ?>
 
-<?php if (!is_checkout()) : ?>
+<?php if (!$empty_footer) : ?>
 <footer class="container footer">
     <div class="footer__item">
         <p class="footer__item_text">DISCLAIMER
