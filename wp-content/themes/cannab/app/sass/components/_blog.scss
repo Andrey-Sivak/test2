@@ -70,7 +70,7 @@
 
       .read-more {
         margin-top: 24px;
-        color: #05B9FF;
+        color: $primary-color;
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
@@ -83,7 +83,7 @@
       }
 
       .read-more:hover {
-        color: #05B9FF;
+        color: $primary-color;
       }
 
       .post__img {
@@ -260,7 +260,7 @@
       }
 
       &:not(:last-child) {
-        color: #05B9FF;
+        color: $primary-color;
         margin-right: 24px;
       }
 

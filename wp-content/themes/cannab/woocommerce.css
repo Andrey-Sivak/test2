@@ -441,7 +441,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .required {
-	color: #f00;
+	color: #05B9FF;
 }
 
 /**

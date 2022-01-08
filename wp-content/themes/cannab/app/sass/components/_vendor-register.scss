@@ -1,0 +1,64 @@
+#dokan-vendor-register {
+  max-width: 515px;
+  width: 100%;
+  margin: 50px auto;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      //
+      opacity: 0;
+    }
+
+    &:placeholder-shown {
+
+      & + label {
+        //opacity: 0!important;
+      }
+    }
+
+    &:focus {
+
+      &::placeholder {
+        opacity: 0;
+      }
+
+      & + label {
+        //opacity: 1!important;
+      }
+    }
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+
+    @include response-to(small) {
+      margin-bottom: 20px;
+    }
+
+    label {
+      position: absolute;
+      font-size: 12px;
+      top: 0;
+      left: 0;
+      color: #000;
+      opacity: 1;
+    }
+  }
+}

@@ -204,7 +204,7 @@
       }
 
       & span:before {
-        color: #05B9FF;
+        color: $primary-color;
       }
     }
 
@@ -300,14 +300,14 @@
       }
 
       .single_add_to_cart_button {
-        border: 1px solid #05B9FF;
+        border: 1px solid $primary-color;
         width: 300px;
         display: block;
         cursor: pointer;
         background-color: transparent;
         text-align: center;
         padding: 12px 0;
-        color: #05B9FF;
+        color: $primary-color;
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
@@ -322,7 +322,7 @@
         }
 
         &:hover {
-          background-color: #05B9FF;
+          background-color: $primary-color;
           color: #fff;
         }
       }
@@ -512,8 +512,8 @@
       height: 80px;
       @include flex-center();
       border-radius: 50%;
-      border: 1px solid #05B9FF;
-      color: #05B9FF;
+      border: 1px solid $primary-color;
+      color: $primary-color;
 
       @include response-to(small) {
         width: 56px;
@@ -574,9 +574,9 @@
       padding: 12px 0;
       text-align: center;
       background-color: #fff;
-      border: 1px solid #05B9FF;
+      border: 1px solid $primary-color;
       border-radius: 4px;
-      color: #05B9FF;
+      color: $primary-color;
       text-transform: uppercase;
       cursor: pointer;
       @include transition-ease;
@@ -595,7 +595,7 @@
       
       &:hover {
         color: #fff;
-        background-color: #05B9FF;
+        background-color: $primary-color;
       }
     }
 
@@ -655,7 +655,7 @@
             span {
               
               &:before {
-                color: #05B9FF;
+                color: $primary-color;
                 font-size: 21px;
                 letter-spacing: 13px;
                 line-height: 1;
@@ -709,13 +709,13 @@
         width: 40px;
         height: 40px;
         @include flex-center();
-        border: 1px solid #05B9FF;
+        border: 1px solid $primary-color;
         border-radius: 4px;
         @include transition-ease;
         background-color: #fff;
         
         &:hover {
-          background-color: #05B9FF;
+          background-color: $primary-color;
 
           svg path {
             fill: #fff;
@@ -724,7 +724,7 @@
 
         svg path {
           @include transition-ease;
-          fill: #05B9FF;
+          fill: $primary-color;
         }
 
         &.prev {
@@ -848,7 +848,7 @@
       .form-submit {
 
         input.submit {
-          border: 1px solid #05B9FF;
+          border: 1px solid $primary-color;
           width: 150px;
           display: block;
           cursor: pointer;
@@ -856,7 +856,7 @@
           text-align: center;
           margin-top: 20px;
           padding: 7px 0;
-          color: #05B9FF;
+          color: $primary-color;
           font-weight: 500;
           font-size: 14px;
           line-height: 24px;
@@ -865,7 +865,7 @@
           border-radius: 4px;
 
           &:hover {
-            background-color: #05B9FF;
+            background-color: $primary-color;
             color: #fff;
           }
         }
@@ -1016,7 +1016,7 @@
       @include transition-ease;
 
       &.active {
-        color: #05B9FF;
+        color: $primary-color;
       }
 
       &:not(:last-of-type) {
@@ -1024,7 +1024,7 @@
       }
 
       &:hover {
-        color: #05B9FF;
+        color: $primary-color;
       }
     }
   }

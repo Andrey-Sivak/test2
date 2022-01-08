@@ -53,7 +53,7 @@
         position: absolute;
         @include flex-center();
         color: #fff;
-        background-color: #05B9FF;
+        background-color: $primary-color;
         border-radius: 50%;
         font-size: 16px;
         line-height: 19px;
@@ -235,7 +235,7 @@
           opacity: 0;
           width: 10px;
           height: 10px;
-          background-color: #05B9FF;
+          background-color: $primary-color;
           left: 7px;
         }
       }
@@ -329,8 +329,8 @@
       }
 
       &_button {
-        background: #05B9FF;
-        border: 1px solid #05B9FF;
+        background: $primary-color;
+        border: 1px solid $primary-color;
         width: 100%;
         text-align: center;
         text-transform: uppercase;

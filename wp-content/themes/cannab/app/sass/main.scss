@@ -1,9 +1,9 @@
-@import "libs/slick";
-@import "libs/select2";
-
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
+
+@import "libs/slick";
+@import "libs/select2";
 
 @import "base/reset";
 @import "base/typography";
@@ -23,6 +23,8 @@
 @import "components/cart";
 @import "components/notice";
 @import "components/mini-card";
+@import "components/entrance";
+@import "components/vendor-register";
 
 body,
 html {
@@ -123,6 +125,7 @@ nav.woocommerce-breadcrumb {
     padding: 12px;
     font-weight: 700;
     line-height: 20px;
+    margin: 0;
 
     &.enter {
       color: #fff;
@@ -157,6 +160,7 @@ nav.woocommerce-breadcrumb {
 .wrapper {
   position: relative;
   width: 100%;
+  min-height: calc(100vh - 400px);
 
   @include response-to(small) {
     overflow: hidden;

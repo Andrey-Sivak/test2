@@ -50,7 +50,7 @@
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-              color: #05B9FF;
+              color: $primary-color;
               font-weight: 500;
               font-size: 14px;
               line-height: 24px;
@@ -86,7 +86,7 @@
             @include transition-ease;
             left: 50%;
             transform: translateX(-50%);
-            color: #05B9FF;
+            color: $primary-color;
             background-color: #fff;
             padding: 0 10px;
             border-radius: 4px;
@@ -160,7 +160,7 @@
         height: 40px;
         cursor: pointer;
         display: none;
-        border: 1px solid #05B9FF;
+        border: 1px solid $primary-color;
         border-radius: 4px;
         background-position: center;
         background-repeat: no-repeat;

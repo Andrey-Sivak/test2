@@ -1105,8 +1105,15 @@ input[type="number"] {
         .header__cart_total {
           display: none; } }
 
+.woocommerce-account {
+  padding-top: 0; }
+  .woocommerce-account .wrapper {
+    min-height: calc(100vh - 230px); }
+
 .woocommerce-checkout {
   padding-top: 0; }
+  .woocommerce-checkout .wrapper {
+    min-height: calc(100vh - 230px); }
   .woocommerce-checkout > .select2-container {
     -webkit-transform: translateY(-35px);
         -ms-transform: translateY(-35px);
@@ -1617,6 +1624,18 @@ input[type="number"] {
         z-index: 10; }
       .products .product:hover .woocommerce-loop-product__title {
         color: #05B9FF; }
+    .products .product .added_to_cart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 3px 0;
+      background-color: rgba(0, 128, 0, 0.7);
+      cursor: pointer; }
+      .products .product .added_to_cart:hover {
+        text-decoration: underline; }
     .products .product .woocommerce-loop-product__title {
       margin-bottom: 8px;
       -webkit-transition: all ease-in-out .3s;
@@ -2565,7 +2584,7 @@ input[type="number"] {
             @include transition-ease;
             left: 50%;
             transform: translateX(-50%);
-            color: #05B9FF;
+            color: $primary-color;
             background-color: #fff;
             padding: 0 10px;
             border-radius: 4px;
@@ -4894,6 +4913,325 @@ input[type="number"] {
       font-size: 24px;
       line-height: 32px; }
 
+.enter {
+  max-width: 515px;
+  width: 100%;
+  position: relative;
+  height: auto;
+  margin: 0 auto 50px; }
+  .enter input[type="text"],
+  .enter input[type="email"],
+  .enter input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    height: 44px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif; }
+    .enter input[type="text"]::-webkit-input-placeholder, .enter input[type="email"]::-webkit-input-placeholder, .enter input[type="password"]::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    .enter input[type="text"]::-moz-placeholder, .enter input[type="email"]::-moz-placeholder, .enter input[type="password"]::-moz-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    .enter input[type="text"]:-ms-input-placeholder, .enter input[type="email"]:-ms-input-placeholder, .enter input[type="password"]:-ms-input-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    .enter input[type="text"]::-ms-input-placeholder, .enter input[type="email"]::-ms-input-placeholder, .enter input[type="password"]::-ms-input-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    .enter input[type="text"]::placeholder,
+    .enter input[type="email"]::placeholder,
+    .enter input[type="password"]::placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    .enter input[type="text"]:focus::-webkit-input-placeholder, .enter input[type="email"]:focus::-webkit-input-placeholder, .enter input[type="password"]:focus::-webkit-input-placeholder {
+      opacity: 0; }
+    .enter input[type="text"]:focus::-moz-placeholder, .enter input[type="email"]:focus::-moz-placeholder, .enter input[type="password"]:focus::-moz-placeholder {
+      opacity: 0; }
+    .enter input[type="text"]:focus:-ms-input-placeholder, .enter input[type="email"]:focus:-ms-input-placeholder, .enter input[type="password"]:focus:-ms-input-placeholder {
+      opacity: 0; }
+    .enter input[type="text"]:focus::-ms-input-placeholder, .enter input[type="email"]:focus::-ms-input-placeholder, .enter input[type="password"]:focus::-ms-input-placeholder {
+      opacity: 0; }
+    .enter input[type="text"]:focus::placeholder,
+    .enter input[type="email"]:focus::placeholder,
+    .enter input[type="password"]:focus::placeholder {
+      opacity: 0; }
+  .enter__text-input-field {
+    margin-bottom: 40px;
+    position: relative; }
+    @media (max-width: 767px) {
+      .enter__text-input-field {
+        margin-bottom: 20px; } }
+    .enter__text-input-field label {
+      position: absolute;
+      font-size: 12px;
+      top: 0;
+      left: 0;
+      color: #000;
+      opacity: 1; }
+  .enter__wrap {
+    width: 100%;
+    display: none; }
+    .enter__wrap.active {
+      display: block; }
+  .enter__row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .enter .button {
+    margin: 72px 0 35px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #05B9FF;
+    -webkit-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+    background-color: #05B9FF;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 24px;
+    text-transform: uppercase; }
+    @media (max-width: 767px) {
+      .enter .button {
+        margin: 35px 0 15px; } }
+    .enter .button:hover {
+      color: #05B9FF;
+      background-color: #fff; }
+  .enter .lost_password a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #05B9FF;
+    text-transform: uppercase; }
+    .enter .lost_password a:hover {
+      text-decoration: underline; }
+  .enter .woocommerce-form__label-for-checkbox span {
+    position: relative;
+    padding-left: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    display: block;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .enter .woocommerce-form__label-for-checkbox span:before, .enter .woocommerce-form__label-for-checkbox span:after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .enter .woocommerce-form__label-for-checkbox span:before {
+      left: 4px;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #999;
+      border-radius: 2px; }
+    .enter .woocommerce-form__label-for-checkbox span:after {
+      width: 10px;
+      height: 10px;
+      background-color: #999;
+      border-radius: 2px;
+      opacity: 0;
+      left: 7px; }
+  .enter .woocommerce-form__label-for-checkbox input[type="checkbox"] {
+    display: none; }
+    .enter .woocommerce-form__label-for-checkbox input[type="checkbox"]:checked + span:after {
+      opacity: 1; }
+  .enter__caption {
+    margin-bottom: 72px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px; }
+    @media (max-width: 767px) {
+      .enter__caption {
+        font-size: 28px;
+        margin-bottom: 30px;
+        margin-top: 20px; } }
+  .enter__footer {
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #999; }
+  .enter__switch {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #05B9FF;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 16px; }
+    .enter__switch:hover {
+      text-decoration: underline; }
+  .enter .vendor-customer-registration {
+    display: none; }
+  .enter__note {
+    margin-bottom: 16px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999; }
+  .enter .woocommerce-privacy-policy-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999; }
+    .enter .woocommerce-privacy-policy-text a {
+      font-size: inherit;
+      line-height: inherit;
+      color: #05B9FF; }
+      .enter .woocommerce-privacy-policy-text a:hover {
+        text-decoration: underline; }
+
+.woocommerce-account .entry-header {
+  display: none; }
+
+.woocommerce-account .woocommerce-notices-wrapper {
+  max-width: 515px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#dokan-vendor-register {
+  max-width: 515px;
+  width: 100%;
+  margin: 50px auto; }
+  #dokan-vendor-register input[type="text"],
+  #dokan-vendor-register input[type="email"],
+  #dokan-vendor-register input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    height: 44px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif; }
+    #dokan-vendor-register input[type="text"]::-webkit-input-placeholder, #dokan-vendor-register input[type="email"]::-webkit-input-placeholder, #dokan-vendor-register input[type="password"]::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]::-moz-placeholder, #dokan-vendor-register input[type="email"]::-moz-placeholder, #dokan-vendor-register input[type="password"]::-moz-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]:-ms-input-placeholder, #dokan-vendor-register input[type="email"]:-ms-input-placeholder, #dokan-vendor-register input[type="password"]:-ms-input-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]::-ms-input-placeholder, #dokan-vendor-register input[type="email"]::-ms-input-placeholder, #dokan-vendor-register input[type="password"]::-ms-input-placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]::placeholder,
+    #dokan-vendor-register input[type="email"]::placeholder,
+    #dokan-vendor-register input[type="password"]::placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #999;
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]:focus::-webkit-input-placeholder, #dokan-vendor-register input[type="email"]:focus::-webkit-input-placeholder, #dokan-vendor-register input[type="password"]:focus::-webkit-input-placeholder {
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]:focus::-moz-placeholder, #dokan-vendor-register input[type="email"]:focus::-moz-placeholder, #dokan-vendor-register input[type="password"]:focus::-moz-placeholder {
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]:focus:-ms-input-placeholder, #dokan-vendor-register input[type="email"]:focus:-ms-input-placeholder, #dokan-vendor-register input[type="password"]:focus:-ms-input-placeholder {
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]:focus::-ms-input-placeholder, #dokan-vendor-register input[type="email"]:focus::-ms-input-placeholder, #dokan-vendor-register input[type="password"]:focus::-ms-input-placeholder {
+      opacity: 0; }
+    #dokan-vendor-register input[type="text"]:focus::placeholder,
+    #dokan-vendor-register input[type="email"]:focus::placeholder,
+    #dokan-vendor-register input[type="password"]:focus::placeholder {
+      opacity: 0; }
+  #dokan-vendor-register .form-group {
+    margin-bottom: 20px;
+    position: relative; }
+    @media (max-width: 767px) {
+      #dokan-vendor-register .form-group {
+        margin-bottom: 20px; } }
+    #dokan-vendor-register .form-group label {
+      position: absolute;
+      font-size: 12px;
+      top: 0;
+      left: 0;
+      color: #000;
+      opacity: 1; }
+
 body,
 html {
   position: relative;
@@ -5000,7 +5338,8 @@ body {
     border-radius: 4px;
     padding: 12px;
     font-weight: 700;
-    line-height: 20px; }
+    line-height: 20px;
+    margin: 0; }
     .age-modal__btn.enter {
       color: #fff;
       background-color: #05B9FF; }
@@ -5029,7 +5368,8 @@ body {
 
 .wrapper {
   position: relative;
-  width: 100%; }
+  width: 100%;
+  min-height: calc(100vh - 400px); }
   @media (max-width: 767px) {
     .wrapper {
       overflow: hidden; } }
