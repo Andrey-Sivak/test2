@@ -424,7 +424,7 @@ setTimeout(() => {
 
     counters.forEach(c => {
         const input = c.querySelector('input');
-        const buttons = [...document.querySelectorAll('.product-price-quantity__count')];
+        const buttons = [...c.querySelectorAll('.product-price-quantity__count')];
         const max = parseInt(input.getAttribute('max'));
         const min = parseInt(input.getAttribute('min'));
         const step = parseInt(input.getAttribute('step'));
