@@ -256,7 +256,7 @@ setTimeout(() => {
 
     captionList.forEach(c => {
         const text = c.innerHTML;
-        const dataScroll = c.offsetTop;
+        const dataScroll = Math.floor(c.getBoundingClientRect().top + window.pageYOffset);
         c.dataset.scroll = dataScroll;
         const item = document.createElement('span');
         item.classList.add('cannab-product__desc_tab');
@@ -280,28 +280,39 @@ setTimeout(() => {
         });
     }
 
-    /*var sections = $('.cannab-product__desc_title')
-        , nav = $('.cannab-product__desc_tabs-wrap')
-        , nav_height = nav.outerHeight();
+    const sections = $('.cannab-product__desc_tab');
+    const firstSectionDataScroll = +$(sections[0]).data('scroll');
 
-    $(window).on('scroll', function () {
-        var cur_pos = $(this).scrollTop();
+    $(window).on('scroll', function ()  {
+        const cur_pos = $(this).scrollTop() + 150;
 
-        sections.each(function() {
-            var top = $(this).offset().top - nav_height,
-                bottom = top + $(this).outerHeight();
+        if (cur_pos >= firstSectionDataScroll) {
 
-            if (cur_pos >= top && cur_pos <= bottom) {
-                const dataScroll = $(this).data('scroll');
-                const currentTab = nav.find(`.cannab-product__desc_tab[data-scroll="${dataScroll}"]`);
+            for (let i = 0; i < sections.length; i++) {
 
-                if (currentTab.hasClass('active')) return;
+                if (cur_pos >= +$(sections[i]).data('scroll')
+                    && cur_pos < +$(sections[i + 1]).data('scroll')) {
 
-                $('.cannab-product__desc_tab.active').removeClass('active');
-                currentTab.addClass('active');
+                    if (!$(sections[i]).hasClass('active')) {
+
+                        $(sections[i]).addClass('active');
+                    }
+                } else if (cur_pos >= +$(sections[i]).data('scroll') && i === sections.length - 1) {
+
+                    if (!$(sections[i]).hasClass('active')) {
+
+                        $(sections[i]).addClass('active');
+                    }
+                } else {
+
+                    if ($(sections[i]).hasClass('active')) {
+
+                        $(sections[i]).removeClass('active');
+                    }
+                }
             }
-        });
-    });*/
+        }
+    });
 
 })();
 
@@ -329,22 +340,6 @@ setTimeout(() => {
     select.select2({
         minimumResultsForSearch: Infinity,
     });
-})();
-
-(function checkoutButton() {
-    const btn = document.querySelector('#place_order') || null;
-
-    if (!btn) return;
-    const fakeBtn = document.querySelector('.checkout__section-card_button');
-
-    fakeBtn.addEventListener('click', clickBtn);
-
-    function clickBtn(e) {
-        e.preventDefault();
-
-        const btn = document.querySelector('#place_order');
-        btn.click();
-    }
 })();
 
 (function cartCounter() {

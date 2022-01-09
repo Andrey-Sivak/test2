@@ -70,8 +70,14 @@
       width: 100%;
       display: block;
       text-align: center;
-      padding: 3px 0;
-      background-color: rgba(green, .7);
+      color: #fff;
+      padding: 4px 0;
+      background-color: $primary-color;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-name: hide;
       cursor: pointer;
 
       &:hover {
@@ -163,5 +169,22 @@
         display: none;
       }
     }
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  99% {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }

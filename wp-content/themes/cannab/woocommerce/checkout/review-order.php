@@ -72,6 +72,27 @@ defined( 'ABSPATH' ) || exit;
   </div>
 
 </div>
+
+<script>
+    (function checkoutButton() {
+        const btn = document.querySelector('#place_order') || null;
+
+        if (!btn) return;
+        const fakeBtn = document.querySelector('.checkout__section-card_button');
+
+        fakeBtn.addEventListener('click', clickBtn);
+
+        function clickBtn(e) {
+            e.preventDefault();
+
+            const btn = document.querySelector('#place_order');
+
+            console.log(this, btn);
+            btn.click();
+        }
+    })();
+</script>
+
 <?php
 if ( ! is_ajax() ) {
 	do_action( 'woocommerce_review_order_after_payment' );

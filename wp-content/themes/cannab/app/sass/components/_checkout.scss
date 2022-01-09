@@ -1,10 +1,14 @@
 .checkout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 
-  @include response-to(medium) {
-    display: block;
+  &-form__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    @include response-to(medium) {
+      display: block;
+    }
   }
 
   .woocommerce-checkout-review-order {
