@@ -4721,6 +4721,15 @@ input[type="number"] {
           transform: translateX(100vw);
   -webkit-transition: all ease-in-out .3s;
   transition: all ease-in-out .3s; }
+  .mini--cart.loading:before {
+    position: absolute;
+    content: '';
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
   .mini--cart__wrap {
     position: fixed;
     z-index: -10;

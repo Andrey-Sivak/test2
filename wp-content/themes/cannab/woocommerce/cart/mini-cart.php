@@ -26,7 +26,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 <div class="mini--cart__top">
     <span class="close" data-cart-close="true"></span>
     <p class="mini--cart__caption">Shopping Cart</p>
-    <p class="mini--cart__items-count"><?=  WC()->cart->get_cart_contents_count(); ?> item in cart</p>
+    <p class="mini--cart__items-count"><span><?=  WC()->cart->get_cart_contents_count(); ?></span> item in cart</p>
     <ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
         <?php
         do_action('woocommerce_before_mini_cart_contents');
@@ -124,35 +124,5 @@ do_action('woocommerce_before_mini_cart'); ?>
 
     <?php endif; ?>
 </div>
-<script>
-    (function ProductCounters() {
-        const counters = [...document.querySelectorAll('.quantity')];
-
-        if (!counters[0]) return;
-
-        counters.forEach(c => {
-            const input = c.querySelector('input');
-            const buttons = [...c.querySelectorAll('.product-price-quantity__count')];
-            const max = parseInt(input.getAttribute('max'));
-            const min = parseInt(input.getAttribute('min'));
-            const step = parseInt(input.getAttribute('step'));
-
-            buttons.forEach(b => b.addEventListener('click', count));
-
-            function count(e) {
-                const target = e.target;
-                const isMinus = target.classList.contains('minus');
-
-                if (isMinus && parseInt(input.value) > min) {
-                    input.value = parseInt(input.value) - step;
-                    return;
-                }
-
-                if (!isMinus) {
-                    input.value = parseInt(input.value) + step;
-                }
-            }
-        });
-    })();
-</script>
+<script src="<?= get_template_directory_uri() . '/js/mini-cart-update.js'; ?>"></script>
 <?php do_action('woocommerce_after_mini_cart'); ?>

@@ -12,6 +12,20 @@
   transform: translateX(100vw);
   @include transition-ease;
 
+  &.loading {
+
+    &:before {
+      position: absolute;
+      content: '';
+      z-index: 100;
+      background-color: rgba(#fff, .7);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
   &__wrap {
     position: fixed;
     z-index: -10;
