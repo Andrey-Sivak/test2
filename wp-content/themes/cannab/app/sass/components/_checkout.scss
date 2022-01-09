@@ -372,9 +372,9 @@
   display: none!important;
 }
 
-.checkout_coupon {
+.woocommerce-form-coupon {
 
-  .woocommerce-form-coupon__form-wrap {
+  &__form-wrap {
     display: flex;
     margin-bottom: 32px;
     justify-content: space-between;
