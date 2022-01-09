@@ -68,6 +68,8 @@ defined( 'ABSPATH' ) || exit;
       </div>
     <?php endforeach; ?>
 
+      <?php do_action('woocommerce_before_checkout_form', $checkout); ?>
+
     <div class="checkout__section-card_button">Place order</div>
   </div>
 

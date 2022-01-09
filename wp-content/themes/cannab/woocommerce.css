@@ -452,18 +452,13 @@ p.stars.selected a:not(.active)::before {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: #0f834d;
 	clear: both;
 }
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: #3d9cd2;
-}
-
-.woocommerce-error {
-	background-color: #e2401c;
+/*	background-color: #3d9cd2;*/
 }
 
 .demo_store {
@@ -477,6 +472,61 @@ p.no-comments {
 	z-index: 9999;
 }
 
+/*new notes*/
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+  padding: 1em 1em 1em 3.5em;
+  margin: 30px 0 1.8em;
+  position: relative;
+  list-style: none outside;
+  width: auto;
+}
+
+.woocommerce-info:before {
+    background-color: #fffafa00;
+    content: url(/wp-content/themes/cannab/dist/img/warning.svg);
+}
+.woocommerce-info {
+    border: 1px solid #FFB020;
+    border-radius: 8px;
+    box-shadow: none;
+    color: #996A13;
+    background-color: #FFFAF1 !important;
+
+}
+.woocommerce-message:before, .woocommerce-error:before, .woocommerce-info:before{
+    width: 20px;
+    height: 20px;
+}
+
+.form-row.woocommerce-invalid input.input-text:before{
+	content: url(/wp-content/themes/cannab/dist/img/warning.svg);
+}
+
+.woocommerce-message {
+    background: #F3F6FF !important;
+    color: #2952CC;
+		box-shadow: none;
+	border-radius: 8px;
+border: 1px solid #3366FF;
+}
+
+.woocommerce-message:before{
+	content:url("/wp-content/themes/cannab/dist/img/info.svg");
+    background-color: #f3f6ff;
+}
+.woocommerce-error {
+    background-color: #FDF4F4;
+    color: #A73636;
+    border-radius: 8px;
+    border: 1px solid #D14343;
+    box-shadow: none;
+}
+.woocommerce-error:before{
+	content:url("/wp-content/themes/cannab/dist/img/danger.svg");
+}	
 @media screen and (min-width: 48em) {
 
 	/**

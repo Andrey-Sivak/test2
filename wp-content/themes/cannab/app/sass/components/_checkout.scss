@@ -372,8 +372,56 @@
   display: none!important;
 }
 
-.woocommerce-form-coupon-toggle {
-  display: none;
+.checkout_coupon {
+
+  .woocommerce-form-coupon__form-wrap {
+    display: flex;
+    margin-bottom: 32px;
+    justify-content: space-between;
+    align-items: center;
+
+    .form-row-first {
+      max-width: 286px;
+      width: 100%;
+    }
+
+    .form-row-last {
+      width: fit-content;
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: #82DCFF;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include transition-ease;
+
+        &:hover {
+          color: $primary-color;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 44px;
+      background-color: transparent;
+      border-bottom: 1px solid #E5E5E5;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 0;
+      
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
 }
 
 #shipping_method {
