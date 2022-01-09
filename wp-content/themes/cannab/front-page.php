@@ -31,7 +31,7 @@ get_header();
                 $image_url = wp_get_attachment_url( $thumbnail_id );
                 ?>
 
-              <a href="#" class="categories__item">
+              <a href="<?= get_home_url() . '/shop/product_cat-' . $cat->category_nicename; ?>" class="categories__item">
                 <figure class="categories__item_img">
                   <img src="<?= $image_url; ?>" alt="img">
                 </figure>
