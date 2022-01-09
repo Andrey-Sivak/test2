@@ -6,7 +6,7 @@
   top: 0;
   background-color: #fff;
   border-bottom: 1px solid #E5E5E5;
-  z-index: 100;
+  z-index: 10000;
 
   @include response-to(small) {
     padding: 5px 0 10px;
@@ -166,7 +166,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 16px;
+    padding-right: 10px;
 
     @include response-to(small) {
       width: 48px;

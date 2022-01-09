@@ -215,6 +215,10 @@
         }
       }
     }
+
+    .button[name="update_cart"] {
+      display: none;
+    }
   }
 
   .woocommerce-cart-form {

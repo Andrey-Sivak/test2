@@ -47,9 +47,6 @@ if ($vendor_id) {
             <?php get_sidebar('shop'); ?>
           <div class="archive-wrap" id="page-<?php the_ID(); ?>">
             <div class="archive-wrap__header">
-              <div class="archive-wrap__header_top">
-                <span class="archive-wrap_found"><?php woocommerce_result_count(); ?></span>
-              </div>
 
               <div class="archive-wrap__header_bottom">
                 <div class="archive-wrap__header_cats"></div>

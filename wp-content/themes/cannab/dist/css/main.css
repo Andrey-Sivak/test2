@@ -880,7 +880,7 @@ input[type="number"] {
   top: 0;
   background-color: #fff;
   border-bottom: 1px solid #E5E5E5;
-  z-index: 100; }
+  z-index: 10000; }
   @media (max-width: 767px) {
     .header {
       padding: 5px 0 10px; } }
@@ -1066,7 +1066,7 @@ input[type="number"] {
     -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    padding-right: 16px; }
+    padding-right: 10px; }
     @media (max-width: 767px) {
       .header__cart {
         width: 48px;
@@ -2523,6 +2523,9 @@ input[type="number"] {
       font-size: 18px;
       line-height: 24px;
       margin-bottom: 16px; } }
+
+.archive .woocommerce-breadcrumb {
+  display: none; }
 
 .archive-container {
   display: -webkit-box;
@@ -4464,6 +4467,8 @@ input[type="number"] {
         color: #82DCFF; }
         .cart-page .cart-collaterals .coupon button:hover {
           text-decoration: underline; }
+    .cart-page .cart-collaterals .button[name="update_cart"] {
+      display: none; }
   .cart-page .woocommerce-cart-form {
     padding-top: 28px;
     -webkit-box-flex: 0;
