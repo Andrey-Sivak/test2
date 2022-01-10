@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_address();
 ?>
-<section class="woocommerce-customer-details">
+    <section class="woocommerce-customer-details">
 
 	<?php if ( $show_shipping ) : ?>
 
@@ -64,3 +64,34 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 	<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 
 </section>
+</div>
+
+
+<div class="order-received__wrap">
+    <p class="order-received__caption"><?php echo esc_html__('Delivery Address', 'woocommerce'); ?></p>
+    <ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details order-received__table">
+
+        <?php wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+
+        <li class="woocommerce-order-overview__order order order-received__table_row">
+            <p><?php esc_html_e('Country / Region', 'woocommerce'); ?></p>
+            <strong><?= $order->get_billing_country(); ?></strong>
+        </li>
+
+        <li class="woocommerce-order-overview__order order order-received__table_row">
+            <p><?php esc_html_e('Street address', 'woocommerce'); ?></p>
+            <strong><?= $order->get_billing_address_1(); ?></strong>
+        </li>
+
+        <li class="woocommerce-order-overview__order order order-received__table_row">
+            <p><?php esc_html_e('Postcode', 'woocommerce'); ?></p>
+            <strong><?= $order->get_billing_postcode(); ?></strong>
+        </li>
+
+        <li class="woocommerce-order-overview__order order order-received__table_row">
+            <p><?php esc_html_e('Town / City', 'woocommerce'); ?></p>
+            <strong><?= $order->get_billing_city(); ?></strong>
+        </li>
+
+    </ul>
+</div>
