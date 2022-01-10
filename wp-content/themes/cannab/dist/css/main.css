@@ -2184,6 +2184,76 @@ input[type="number"] {
       margin-bottom: 16px; } }
   .post-item:hover {
     box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.04); }
+  .post-item.add {
+    background: -webkit-linear-gradient(top, #009EE4 0%, #0090CF 100%);
+    background: linear-gradient(180deg, #009EE4 0%, #0090CF 100%);
+    border-radius: 8px;
+    padding: 24px;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%; }
+    .post-item.add .post__img {
+      margin-bottom: 0;
+      -webkit-box-align: end;
+      -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      height: auto;
+      border-radius: 6px; }
+    .post-item.add .post__title {
+      font-size: 32px;
+      line-height: 40px;
+      color: #fff;
+      margin-bottom: 16px;
+      white-space: unset;
+      text-overflow: unset;
+      overflow: unset; }
+    .post-item.add .post_excerpt {
+      font-size: 18px;
+      line-height: 32px;
+      color: #fff;
+      margin-bottom: 16px; }
+    .post-item.add .post__learn-more {
+      display: block;
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content; }
+      .post-item.add .post__learn-more:hover {
+        text-decoration: underline; }
+      .post-item.add .post__learn-more:before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        content: '';
+        width: 8px;
+        height: 10px;
+        right: -15px;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url("../img/learm-more-arrow.svg"); }
   .post-item.first {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2287,7 +2357,11 @@ input[type="number"] {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  /*
+    &:hover img {
+      transform: scale(1.1);
+    }*/ }
   @media (max-width: 1200px) {
     .post__img {
       height: 160px; } }
@@ -2304,10 +2378,6 @@ input[type="number"] {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
             transform: scale(1); }
-  .post__img:hover img {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1); }
 
 .post__title {
   display: block;

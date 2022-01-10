@@ -2,8 +2,13 @@
 
 $post_data = $args;
 
-$post_item = $args['post'];
-$is_first = $args['first'];
+$post_item = $post_data['post'];
+
+$is_first = $post_data['first'];
+if (!is_object($post_item)) {
+    get_template_part('/template-parts/post-add-template', null, $post_item);
+    return;
+}
 $post_ID = $post_item->ID;
 $excerpt_symbols = $is_first ? 80 : 30;
 $trim_post_content = wp_trim_words( $post_item->post_content, $excerpt_symbols, '...' );

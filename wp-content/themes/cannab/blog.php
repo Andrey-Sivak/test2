@@ -25,6 +25,12 @@ get_header();
         'orderby' => 'date',
         'order' => 'DESC'
     ]);
+
+    $add = [
+            'add' => get_field('add', 'option'),
+    ];
+
+    array_splice($posts_list, rand(1, count($posts_list)), 0, $add);
     ?>
   <div class="posts">
       <?php
