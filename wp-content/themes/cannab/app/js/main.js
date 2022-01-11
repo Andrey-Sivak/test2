@@ -132,8 +132,11 @@ setTimeout(() => {
     }
 
     function displaySubMenu(e) {
-        e.preventDefault();
-        this.classList.toggle('active');
+        const target = e.target;
+        if (target === this || target.parentElement === this) {
+            e.preventDefault();
+            this.classList.toggle('active');
+        }
     }
 
     function addCommonLinkToSubmenu(menuItem) {
