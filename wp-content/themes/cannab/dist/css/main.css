@@ -1422,6 +1422,11 @@ input[type="number"] {
     margin: 0 auto; }
     @media (max-width: 992px) {
       .header__menu_container .menu {
+        padding-bottom: 30px;
+        max-height: 100vh;
+        overflow-y: scroll; } }
+    @media (max-width: 992px) {
+      .header__menu_container .menu {
         padding-top: 100px;
         position: absolute;
         padding-left: 20px;
@@ -1453,11 +1458,18 @@ input[type="number"] {
         @media (max-width: 1200px) {
           .header__menu_container .menu-item:not(:last-of-type) {
             margin-right: 15px; } }
+        @media (max-width: 992px) {
+          .header__menu_container .menu-item:not(:last-of-type) {
+            margin-right: 0; } }
       .header__menu_container .menu-item a {
         font-size: 18px;
         line-height: 21px; }
       .header__menu_container .menu-item.menu-item-has-children {
         padding-right: 28px; }
+        @media (max-width: 992px) {
+          .header__menu_container .menu-item.menu-item-has-children {
+            padding-right: 0;
+            max-width: 100%; } }
         .header__menu_container .menu-item.menu-item-has-children:before {
           position: absolute;
           content: '';
@@ -1472,6 +1484,11 @@ input[type="number"] {
           -webkit-transform: translateY(-50%);
               -ms-transform: translateY(-50%);
                   transform: translateY(-50%); }
+          @media (max-width: 992px) {
+            .header__menu_container .menu-item.menu-item-has-children:before {
+              right: unset;
+              left: 80px;
+              top: 18px; } }
       .header__menu_container .menu-item .sub-menu {
         position: absolute;
         background-color: #fff;
@@ -1487,6 +1504,11 @@ input[type="number"] {
         overflow: hidden;
         max-height: 0;
         max-width: 100%; }
+        @media (max-width: 992px) {
+          .header__menu_container .menu-item .sub-menu {
+            position: relative;
+            top: unset;
+            padding: 0; } }
         .header__menu_container .menu-item .sub-menu > .menu-item {
           font-size: 15px;
           line-height: 22px;
@@ -1500,11 +1522,19 @@ input[type="number"] {
             background-color: transparent; }
             .header__menu_container .menu-item .sub-menu > .menu-item a:hover {
               background-color: #F9F9F9; }
-      .header__menu_container .menu-item:hover > .sub-menu {
-        z-index: 10;
-        opacity: 1;
-        max-width: unset;
-        max-height: initial; }
+      @media (min-width: 992px) {
+        .header__menu_container .menu-item:hover > .sub-menu {
+          z-index: 10;
+          opacity: 1;
+          max-width: unset;
+          max-height: initial; } }
+      @media (max-width: 992px) {
+        .header__menu_container .menu-item.active > .sub-menu {
+          z-index: 10;
+          padding: 12px 0;
+          opacity: 1;
+          max-width: unset;
+          max-height: initial; } }
 
 .mob-menu-btn {
   display: none;

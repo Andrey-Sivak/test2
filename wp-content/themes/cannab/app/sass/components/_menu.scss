@@ -58,6 +58,12 @@
     display: flex;
     align-items: center;
     margin: 0 auto;
+
+    @include response-to(medium) {
+      padding-bottom: 30px;
+      max-height: 100vh;
+      overflow-y: scroll;
+    }
     
     @include response-to(medium) {
       padding-top: 100px;
@@ -85,6 +91,10 @@
         @include response-to(large) {
           margin-right: 15px;
         }
+
+        @include response-to(medium) {
+          margin-right: 0;
+        }
       }
 
       a {
@@ -94,6 +104,11 @@
 
       &.menu-item-has-children {
         padding-right: 28px;
+
+        @include response-to(medium) {
+          padding-right: 0;
+          max-width: 100%;
+        }
 
         &:before {
           position: absolute;
@@ -107,6 +122,12 @@
           right: 8px;
           top: 50%;
           transform: translateY(-50%);
+
+          @include response-to(medium) {
+            right: unset;
+            left: 80px;
+            top: 18px;
+          }
         }
       }
 
@@ -124,6 +145,12 @@
         overflow: hidden;
         max-height: 0;
         max-width: 100%;
+
+        @include response-to(medium) {
+          position: relative;
+          top: unset;
+          padding: 0;
+        }
 
         & > .menu-item {
           font-size: 15px;
@@ -145,11 +172,23 @@
         }
       }
 
-      &:hover > .sub-menu {
-        z-index: 10;
-        opacity: 1;
-        max-width: unset;
-        max-height: initial;
+      @media(min-width: 992px) {
+        &:hover > .sub-menu {
+          z-index: 10;
+          opacity: 1;
+          max-width: unset;
+          max-height: initial;
+        }
+      }
+
+      @include response-to(medium) {
+        &.active > .sub-menu {
+          z-index: 10;
+          padding: 12px 0;
+          opacity: 1;
+          max-width: unset;
+          max-height: initial;
+        }
       }
     }
   }

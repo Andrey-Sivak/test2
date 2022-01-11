@@ -96,11 +96,19 @@ setTimeout(() => {
     const menuButton = document.querySelector('.mob-menu-btn') || null;
     const menuContent = document.querySelector('.header__menu_container') || null;
     const menuLogo = document.querySelector('.header__logo-mob-menu') || null;
+    const hasSubMenuItems = document.querySelector('.menu-item-has-children') || null;
+    const hasSubMenuItemsList = () => hasSubMenuItems ? [...document.querySelectorAll('.menu-item-has-children')] : null;
+
+    console.log(hasSubMenuItemsList());
 
     if (!menuButton || !menuContent) return;
 
     menuButton.addEventListener('click', showMenu);
     menuContent.addEventListener('click', hideMenu);
+
+    if (hasSubMenuItemsList()) {
+        hasSubMenuItemsList().forEach(h => h.addEventListener('click', displaySubMenu));
+    }
 
     function showMenu(e) {
         this.classList.add('active');
@@ -118,6 +126,11 @@ setTimeout(() => {
         menuButton.classList.remove('active');
         menuLogo.classList.remove('active');
         document.body.classList.remove('no-scrolling');
+    }
+
+    function displaySubMenu(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
     }
 })();
 
