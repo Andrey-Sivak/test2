@@ -3754,7 +3754,6 @@ input[type="number"] {
         .cannab-product__desc_image {
           height: 110px; } }
       .cannab-product__desc_image img {
-        display: none;
         width: 100vw;
         height: auto;
         opacity: 0;
