@@ -79,6 +79,9 @@ if ( post_password_required() ) {
        <?php woocommerce_template_single_rating(); ?>
        </div>
 
+         <div class="cannab-product__sold-by mob">
+             <?= sprintf( esc_html__( 'sold by %s', 'woocommerce' ), "<span class='cannab-product__sold-by_name'>$vendor_name</span>"); ?>
+         </div>
        <?php
        $effects = get_the_terms( $product->get_id(), 'effects' );
        if ($effects[0]) : ?>

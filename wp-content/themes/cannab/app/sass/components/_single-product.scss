@@ -216,6 +216,7 @@
 
       @include response-to(small) {
         display: flex;
+        padding-top: 24px;
         flex-direction: column;
         width: 100%;
       }
@@ -335,6 +336,18 @@
     color: #999;
     margin-bottom: 24px;
     text-transform: uppercase;
+
+    &.mob {
+      display: none;
+
+      @include response-to(small) {
+        display: block;
+        order: 1;
+        margin-bottom: 0;
+        margin-top: 24px;
+        color: #000;
+      }
+    }
 
     &_name {
       font-weight: bold;
