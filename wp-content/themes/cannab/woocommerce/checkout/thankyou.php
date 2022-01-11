@@ -36,54 +36,7 @@ defined( 'ABSPATH' ) || exit;
 					<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="button pay"><?php esc_html_e( 'My account', 'woocommerce' ); ?></a>
 				<?php endif; ?>
 			</p>
-
-		<?php else : ?>
-
-        <div class="order-received__wrap">
-            <p class="order-received__caption"><?php echo esc_html__('Order Summary', 'woocommerce'); ?></p>
-
-            <ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details order-received__table">
-
-                <li class="woocommerce-order-overview__order order order-received__table_row">
-                    <p><?php esc_html_e('Order number:', 'woocommerce'); ?></p>
-                    <strong><?php echo $order->get_order_number(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
-                </li>
-
-                <li class="woocommerce-order-overview__date date order-received__table_row">
-                    <p><?php esc_html_e('Date:', 'woocommerce'); ?></p>
-                    <strong><?php echo wc_format_datetime($order->get_date_created()); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
-                </li>
-
-                <?php if (is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email()) : ?>
-                    <li class="woocommerce-order-overview__email email order-received__table_row">
-                        <p><?php esc_html_e('Email:', 'woocommerce'); ?></p>
-                        <strong><?php echo $order->get_billing_email(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
-                    </li>
-                <?php endif; ?>
-
-                <?php if ($order->get_payment_method_title()) : ?>
-                    <li class="woocommerce-order-overview__payment-method method order-received__table_row">
-                        <p><?php esc_html_e('Payment method:', 'woocommerce'); ?></p>
-                        <strong><?php echo wp_kses_post($order->get_payment_method_title()); ?></strong>
-                    </li>
-                <?php endif; ?>
-
-                <?php $shipping_methods = $order->get_shipping_methods();
-                foreach ($shipping_methods as $shipping_method) : ?>
-                <li class="woocommerce-order-overview__total shipping order-received__table_row">
-                    <p><?php esc_html_e('Shipping:', 'woocommerce'); ?></p>
-                    <strong><?php echo $shipping_method->get_name();?></strong>
-                </li>
-                <?php endforeach; ?>
-
-                <li class="woocommerce-order-overview__total subtotal order-received__table_row">
-                    <p><?php esc_html_e('Subotal:', 'woocommerce'); ?></p>
-                    <strong><?php echo $order->get_subtotal_to_display(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
-                </li>
-
-            </ul>
-        </div>
-
+    
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>

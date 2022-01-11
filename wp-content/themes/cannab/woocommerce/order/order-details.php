@@ -39,7 +39,7 @@ if ( $show_downloads ) {
 	);
 }
 ?>
-<div class="">
+<div class="woocommerce-order__left">
     <section class="woocommerce-order-details order-received__big-table">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 

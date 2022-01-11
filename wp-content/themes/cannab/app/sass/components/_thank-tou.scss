@@ -5,6 +5,16 @@
     padding: 24px;
     background: #F5F9FA;
     border-radius: 8px;
+    margin-bottom: 24px;
+
+    @include response-to(medium) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include response-to(small) {
+      padding: 15px;
+    }
   }
 
   &__caption {
@@ -33,6 +43,11 @@
         line-height: 32px;
         max-width: 50%;
         width: 100%;
+
+        @include response-to(small) {
+          font-size: 14px;
+          line-height: 120%;
+        }
       }
 
       p {
@@ -50,6 +65,11 @@
     max-width: 837px;
     width: 100%;
     margin-bottom: 24px;
+
+    @include response-to(medium) {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     table {
       border-collapse: collapse;
@@ -70,8 +90,21 @@
           text-align: left;
           color: #999;
 
+          @include response-to(small) {
+            padding: 15px 0;
+            min-width: 50px;
+
+            &:last-of-type {
+              display: none;
+            }
+          }
+
           &:first-of-type {
             padding-left: 24px;
+
+            @include response-to(small) {
+              padding-left: 15px;
+            }
           }
         }
       }
@@ -81,6 +114,15 @@
         font-weight: normal;
         font-size: 16px;
         line-height: 20px;
+
+        @include response-to(small) {
+          min-width: 50px;
+          font-size: 14px;
+
+          &:last-of-type {
+            display: none;
+          }
+        }
 
         strong {
           font-weight: normal;
@@ -99,6 +141,10 @@
         width: 100%;
         margin: 24px 0;
 
+        @include response-to(small) {
+          margin: 15px 0;
+        }
+
         &_img {
           margin-right: 20px;
           margin-left: 24px;
@@ -106,6 +152,10 @@
           width: 63px;
           overflow: hidden;
           @include flex-center();
+
+          @include response-to(small) {
+            display: none;
+          }
 
           img {
             display: block;
@@ -118,6 +168,12 @@
           font-weight: normal;
           font-size: 16px;
           line-height: 20px;
+
+          @include response-to(small) {
+            padding: 0 15px;
+            font-size: 14px;
+            line-height: 120%;
+          }
         }
       }
     }
@@ -135,6 +191,11 @@
   max-width: 837px;
   width: 100%;
 
+  @include response-to(medium) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__caption {
     font-weight: normal;
     font-size: 20px;
@@ -142,6 +203,10 @@
     width: 100%;
     padding: 20px 0 20px 24px;
     border-bottom: 1px solid #EDEDED;
+
+    @include response-to(small) {
+      padding: 10px 0 10px 15px;
+    }
   }
 
   &__row {
@@ -150,6 +215,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 24px;
+
+    @include response-to(small) {
+      padding: 15px;
+    }
 
     &:not(:last-of-type) {
       border-bottom: 1px solid #EDEDED;
@@ -162,6 +231,11 @@
       line-height: 24px;
       max-width: 50%;
       width: 100%;
+
+      @include response-to(small) {
+        font-size: 14px;
+        line-height: 120%;
+      }
     }
 
     p {
@@ -170,6 +244,35 @@
 
     strong {
       text-align: right;
+    }
+  }
+}
+
+.woocommerce-order {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include response-to(medium) {
+    flex-wrap: wrap;
+  }
+
+  &__right {
+    flex: 0 0 410px;
+    margin-left: 20px;
+
+    @include response-to(medium) {
+      margin-top: 24px;
+      flex: 0 0 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__left {
+
+    @include response-to(medium) {
+      flex: 0 0 100%;
     }
   }
 }
