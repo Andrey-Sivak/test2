@@ -230,10 +230,10 @@
   }
 
   & > .select2-container {
-    transform: translateY(-35px);
+    transform: translateY(-30px);
 
     @include response-to(small) {
-      transform: translateY(-50px);
+      transform: translateY(-45px);
     }
   }
 }
