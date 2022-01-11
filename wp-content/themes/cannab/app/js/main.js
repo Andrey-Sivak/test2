@@ -93,13 +93,13 @@ setTimeout(() => {
 })();
 
 (function menu() {
+    if (!isMobile) return;
+
     const menuButton = document.querySelector('.mob-menu-btn') || null;
     const menuContent = document.querySelector('.header__menu_container') || null;
     const menuLogo = document.querySelector('.header__logo-mob-menu') || null;
     const hasSubMenuItems = document.querySelector('.menu-item-has-children') || null;
     const hasSubMenuItemsList = () => hasSubMenuItems ? [...document.querySelectorAll('.menu-item-has-children')] : null;
-
-    console.log(hasSubMenuItemsList());
 
     if (!menuButton || !menuContent) return;
 
