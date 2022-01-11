@@ -944,7 +944,8 @@ input[type="number"] {
         height: 20px;
         margin-right: 10px; } }
   .header .header__search {
-    position: relative; }
+    position: relative;
+    display: none; }
     .header .header__search_icon {
       background-image: url("../img/header-search-icon.svg"); }
     .header .header__search_form-wrap {
@@ -956,8 +957,10 @@ input[type="number"] {
   .header__login {
     background-image: url("../img/login.svg"); }
   .header__wishlist {
+    display: none;
     background-image: url("../img/wish-icon.svg"); }
   .header__lang {
+    display: none;
     background-image: url("../img/lang-icon.svg"); }
   .header__cart {
     width: 115px;

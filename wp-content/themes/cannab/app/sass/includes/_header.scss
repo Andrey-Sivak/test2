@@ -123,6 +123,8 @@
 
   .header__search {
     position: relative;
+    //
+    display: none;
 
     &_icon {
       background-image: url('../../img/header-search-icon.svg');
@@ -142,10 +144,14 @@
   }
 
   &__wishlist {
+    //
+    display: none;
     background-image: url('../../img/wish-icon.svg');
   }
 
   &__lang {
+    //
+    display: none;
     background-image: url('../../img/lang-icon.svg');
   }
 
