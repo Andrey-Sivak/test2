@@ -66,8 +66,17 @@
     width: 100%;
     margin-bottom: 24px;
 
+    @include response-to(huge) {
+      max-width: 700px;
+    }
+
+    @include response-to(large) {
+      max-width: 500px;
+    }
+
     @include response-to(medium) {
       margin-left: auto;
+      max-width: 100%;
       margin-right: auto;
     }
 
@@ -191,9 +200,18 @@
   max-width: 837px;
   width: 100%;
 
+  @include response-to(huge) {
+    max-width: 700px;
+  }
+
+  @include response-to(large) {
+    max-width: 500px;
+  }
+
   @include response-to(medium) {
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
   }
 
   &__caption {
@@ -253,9 +271,17 @@
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
 
-  @include response-to(medium) {
-    flex-wrap: wrap;
+  .woocommerce-notice {
+    flex: 0 0 100%;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 24px;
+
+    @include response-to(small) {
+      font-size: 18px;
+    }
   }
 
   &__right {
