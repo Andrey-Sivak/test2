@@ -107,7 +107,10 @@ setTimeout(() => {
     menuContent.addEventListener('click', hideMenu);
 
     if (hasSubMenuItemsList()) {
-        hasSubMenuItemsList().forEach(h => h.addEventListener('click', displaySubMenu));
+        hasSubMenuItemsList().forEach(h => {
+            h.addEventListener('click', displaySubMenu);
+            addCommonLinkToSubmenu(h);
+        });
     }
 
     function showMenu(e) {
@@ -131,6 +134,21 @@ setTimeout(() => {
     function displaySubMenu(e) {
         e.preventDefault();
         this.classList.toggle('active');
+    }
+
+    function addCommonLinkToSubmenu(menuItem) {
+        const commonItem = menuItem.querySelector('a');
+        const link = commonItem.getAttribute('href');
+        const subMenu = menuItem.querySelector('.sub-menu');
+
+        const newElem = document.createElement('li');
+        const newLink = document.createElement('a');
+        newLink.setAttribute('href', link);
+        newLink.innerHTML = 'All';
+        newElem.appendChild(newLink);
+        newElem.classList.add('menu-item', 'menu-item-type-custom', 'menu-item-object-custom');
+
+        subMenu.prepend(newElem);
     }
 })();
 
