@@ -49,7 +49,6 @@ if ($vendor_id) {
             <div class="archive-wrap__header">
 
               <div class="archive-wrap__header_bottom">
-                <div class="archive-wrap__header_cats"></div>
                 <div class="archive-wrap__header_order">
                   <p class="archive-wrap__header_order-note">Sort by:</p>
                     <?php woocommerce_catalog_ordering(); ?>

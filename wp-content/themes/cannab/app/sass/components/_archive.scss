@@ -4,8 +4,13 @@
     display: none;
   }
 
+  &-wrap {
+    width: 100%;
+  }
+
   &-container {
     display: flex;
+    width: 100%;
 
     .archive-wrap {
       padding-top: 24px;
@@ -29,7 +34,7 @@
         &_bottom {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: flex-end;
           width: 100%;
         }
 
@@ -58,33 +63,12 @@
           cursor: pointer;
           position: relative;
 
-          /*&:before {
-            position: absolute;
-            content: 'remove';
-            font-size: 14px;
-            top: 95%;
-            z-index: -1;
-            opacity: 0;
-            @include transition-ease;
-            left: 50%;
-            transform: translateX(-50%);
-            color: $primary-color;
-            background-color: #fff;
-            padding: 0 10px;
-            border-radius: 4px;
-          }*/
-
           &:not(:last-of-type) {
             margin-right: 28px;
           }
 
           &:hover {
             border-color: #0B0A0B;
-
-            /*&:before {
-              opacity: 1;
-              z-index: 1;
-            }*/
           }
 
           .remove {
@@ -115,7 +99,6 @@
         z-index: 100000;
         transition: transform .25s ease;
         margin: 0;
-        padding: 0;
         opacity: 1;
         display: block;
         height: 100%;
@@ -128,10 +111,6 @@
         font-size: 20px;
         line-height: 23px;
         color: #0B0A0B;
-      }
-
-      .wpc-filter-product_cat .wpc-term-item-content-wrapper label:before {
-        //content: none!important;
       }
 
       #mobile-close-sidebar {

@@ -155,56 +155,6 @@ setTimeout(() => {
     }
 })();
 
-(function setArchiveProductsNumbers() {
-    const widget = document.querySelector('.widget.widget_wpc_filters_widget') || null;
-
-    if (!widget) return;
-
-    const categoriesList = [...document.querySelector('.wpc-filter-chips-list').children];
-    const categoriesListOut = document.querySelector('.archive-wrap__header_cats');
-
-    (function setActiveCats() {
-        if (!categoriesList.length) return;
-        categoriesList.forEach(c => {
-            const cat = c.querySelector('span.wpc-filter-chip-name').innerHTML;
-            if (cat !== 'Reset all') {
-                const catClasses = [...c.classList];
-                const classWithId = catClasses.filter(t => t.includes('wpc-chip-product_cat-'))[0];
-                if (classWithId) {
-                    const catId = classWithId.replace('wpc-chip-product_cat-', '');
-                    const item = createCat(cat, catId);
-
-                    categoriesListOut.appendChild(item);
-                }
-            }
-        });
-
-
-    })();
-
-    function createCat(title, id) {
-        const p = document.createElement('p');
-        p.classList.add('archive-wrap__header_cat');
-        p.innerHTML = title;
-
-        const span = document.createElement('span');
-        span.classList.add('remove');
-        span.innerHTML = '×';
-        span.dataset.categoryRemove = id;
-        p.appendChild(span);
-
-        span.addEventListener('click', removeCat);
-
-        return p;
-    }
-    
-    function removeCat(e) {
-        const catId = this.dataset.categoryRemove;
-        const category = document.querySelector(`label[for="wpc-checkbox-taxonomy-product_cat-${catId}"]`);
-        category.click();
-    }
-})();
-
 (function mobileSidebar() {
     const btnShow = document.getElementById('mobile-trigger-sidebar') || null;
     const btnHide = document.getElementById('mobile-close-sidebar') || null;

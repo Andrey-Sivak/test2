@@ -75,7 +75,7 @@ nav.woocommerce-breadcrumb {
   @include transition-ease;
 
   &.active {
-    z-index: 1000;
+    z-index: 100000;
     opacity: 1;
     background-color: rgba(#000, .7);
   }
@@ -126,16 +126,31 @@ nav.woocommerce-breadcrumb {
     padding: 12px;
     font-weight: 700;
     line-height: 20px;
+    border: 1px solid;
     margin: 0;
+    @include transition-ease;
 
     &.enter {
       color: #fff;
       background-color: #05B9FF;
+      border-color: #05B9FF;
+      
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        border-color: #11111166;
+      }
     }
 
     &.leave {
-      border: 1px solid #11111166;
+      border-color: #11111166;
       background-color: #fff;
+
+      &:hover {
+        color: #fff;
+        background-color: #05B9FF;
+        border-color: #05B9FF;
+      }
     }
   }
 

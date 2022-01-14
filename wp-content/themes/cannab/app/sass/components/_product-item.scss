@@ -1,7 +1,7 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 
   &.related {
@@ -15,14 +15,10 @@
     font-weight: normal;
   }
 
-  @include response-to(medium) {
-    justify-content: space-around;
-  }
-
   .product {
     padding: 10px 20px 20px;
     width: 24%;
-    margin-bottom: 20px;
+    margin: 0 .5% 20px .5%;
     flex: 0 24%;
     display: flex;
     flex-direction: column;
@@ -186,5 +182,13 @@
   100% {
     opacity: 0;
     z-index: -1;
+  }
+}
+
+.random-products,
+.related.products {
+
+  .products {
+    justify-content: space-between;
   }
 }

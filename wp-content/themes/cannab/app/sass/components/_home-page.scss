@@ -57,9 +57,27 @@
       font-size: 16px;
       letter-spacing: 1px;
       border-radius: 8px;
-      padding: 15px 30px;
+      padding: 15px 45px 15px 30px;
       display: inline-block;
       color: #fff;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: "\f061";
+        font-family: 'rhicons', sans-serif!important;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+      }
     }
   }
 

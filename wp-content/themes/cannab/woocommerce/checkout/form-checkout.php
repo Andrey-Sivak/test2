@@ -54,6 +54,19 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
                 <div class="col-2">
                     <?php do_action('woocommerce_checkout_shipping'); ?>
                 </div>
+
+                <script>
+                    (function () {
+                        window.addEventListener('load', () => {
+
+                            setTimeout(() => {
+                                if (document.querySelector('input[name="billing_first_name"]')) {
+                                    document.querySelector('input[name="billing_first_name"]').focus();
+                                }
+                            }, 3000)
+                        })
+                    })();
+                </script>
             </div>
 
             <?php do_action('woocommerce_checkout_after_customer_details'); ?>
