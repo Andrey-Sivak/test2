@@ -22,13 +22,13 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2><?php esc_html_e( 'Your Order', 'woocommerce' ); ?></h2>
+	<h2><?php esc_html_e( 'Your Order', 'cannab' ); ?></h2>
 
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
-			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
+			<th><?php esc_html_e( 'Subtotal', 'cannab' ); ?></th>
+			<td data-title="<?php esc_attr_e( 'Subtotal', 'cannab' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
@@ -49,8 +49,8 @@ defined( 'ABSPATH' ) || exit;
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
 
 			<tr class="shipping">
-				<th><?php esc_html_e( 'Shipping', 'woocommerce' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
+				<th><?php esc_html_e( 'Shipping', 'cannab' ); ?></th>
+				<td data-title="<?php esc_attr_e( 'Shipping', 'cannab' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
 			</tr>
 
 		<?php endif; ?>
@@ -69,7 +69,7 @@ defined( 'ABSPATH' ) || exit;
 
 			if ( WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping() ) {
 				/* translators: %s location. */
-				$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'woocommerce' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
+				$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'cannab' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
 			}
 
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
@@ -95,8 +95,8 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
+			<th><?php esc_html_e( 'Total', 'cannab' ); ?></th>
+			<td data-title="<?php esc_attr_e( 'Total', 'cannab' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
@@ -106,14 +106,14 @@ defined( 'ABSPATH' ) || exit;
 
           <?php if ( wc_coupons_enabled() ) { ?>
             <div class="coupon">
-              <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Enter promo code:', 'woocommerce' ); ?>" />
-              <label for="coupon_code"><?php esc_html_e( 'Enter promo code:', 'woocommerce' ); ?></label>
-              <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply', 'woocommerce' ); ?></button>
+              <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Enter promo code:', 'cannab' ); ?>" />
+              <label for="coupon_code"><?php esc_html_e( 'Enter promo code:', 'cannab' ); ?></label>
+              <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply', 'cannab' ); ?>"><?php esc_attr_e( 'Apply', 'cannab' ); ?></button>
                 <?php do_action( 'woocommerce_cart_coupon' ); ?>
             </div>
           <?php } ?>
 
-        <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+        <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'cannab' ); ?>"><?php esc_html_e( 'Update cart', 'cannab' ); ?></button>
 
           <?php do_action( 'woocommerce_cart_actions' ); ?>
 

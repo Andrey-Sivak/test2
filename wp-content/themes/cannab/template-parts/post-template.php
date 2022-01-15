@@ -27,7 +27,7 @@ $recent_modified_value = date( 'F j, Y', $recent_modified );
         <a class="post__title" href="<?= get_permalink($post_ID); ?>"><?= $post_item->post_title; ?></a>
         <p class="post_excerpt"><?= $trim_post_content; ?></p>
         <?php if ($is_first) : ?>
-        <a href="<?= get_permalink($post_ID); ?>" class="read-more">READ ALL ARTICLE</a>
+        <a href="<?= get_permalink($post_ID); ?>" class="read-more"><?= esc_html__('READ ALL ARTICLE', 'cannab'); ?></a>
         <?php endif; ?>
     </div>
 </div>

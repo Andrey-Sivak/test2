@@ -27,3 +27,4 @@ wp-content/plugins/*
 
 # Frontend tools
 wp-content/themes/cannab/node_modules/
+wp-content/themes/cannab/vendor/

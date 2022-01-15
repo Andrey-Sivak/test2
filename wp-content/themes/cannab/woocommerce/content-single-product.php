@@ -74,13 +74,13 @@ if ( post_password_required() ) {
        $vendor = get_userdata( $vendor_id );
        $vendor_name = $vendor->display_name; ?>
            <div class="cannab-product__sold-by">
-       <?= sprintf( esc_html__( 'sold by %s', 'woocommerce' ), "<span class='cannab-product__sold-by_name'>$vendor_name</span>"); ?>
+       <?= sprintf( esc_html__( 'sold by %s', 'cannab' ), "<span class='cannab-product__sold-by_name'>$vendor_name</span>"); ?>
            </div>
        <?php woocommerce_template_single_rating(); ?>
        </div>
 
          <div class="cannab-product__sold-by mob">
-             <?= sprintf( esc_html__( 'sold by %s', 'woocommerce' ), "<span class='cannab-product__sold-by_name'>$vendor_name</span>"); ?>
+             <?= sprintf( esc_html__( 'sold by %s', 'cannab' ), "<span class='cannab-product__sold-by_name'>$vendor_name</span>"); ?>
          </div>
        <?php
        $effects = get_the_terms( $product->get_id(), 'effects' );

@@ -4,7 +4,7 @@
     <div class="post__content">
         <a class="post__title" href="<?= $post_data['add-link']; ?>"><?= $post_data['add-caption']; ?></a>
         <p class="post_excerpt"><?= $post_data['add-short_text']; ?></p>
-        <a href="<?= $post_data['add-link']; ?>" class="post__learn-more">Learn more</a>
+        <a href="<?= $post_data['add-link']; ?>" class="post__learn-more"><?= esc_html__('Learn more', 'cannab') ?></a>
     </div>
     <figure class="post__img">
         <img src="<?= $post_data['add-image']['url']; ?>" alt="img">

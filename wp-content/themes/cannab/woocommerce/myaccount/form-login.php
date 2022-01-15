@@ -43,7 +43,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                        id="username"
                        autocomplete="username"
                        value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
-                <label for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span
+                <label for="username"><?php esc_html_e('Username or email address', 'cannab'); ?>&nbsp;<span
                             class="required">*</span></label>
             </p>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide enter__text-input-field">
@@ -53,7 +53,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                        id="password"
                        placeholder="Password"
                        autocomplete="current-password"/>
-                <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span
+                <label for="password"><?php esc_html_e('Password', 'cannab'); ?>&nbsp;<span
                             class="required">*</span></label>
             </p>
 
@@ -67,15 +67,15 @@ do_action('woocommerce_before_customer_login_form'); ?>
                                type="checkbox"
                                id="rememberme"
                                value="forever"/>
-                        <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
+                        <span><?php esc_html_e('Remember me', 'cannab'); ?></span>
                     </label>
                     <p class="woocommerce-LostPassword lost_password">
-                        <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot your password?', 'woocommerce'); ?></a>
+                        <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Forgot your password?', 'cannab'); ?></a>
                     </p>
                 </div>
                 <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
                 <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login"
-                        value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
+                        value="<?php esc_attr_e('Log in', 'cannab'); ?>"><?php esc_html_e('Log in', 'cannab'); ?></button>
                 <p class="enter__footer">Don’t have an account? <a href="#" class="enter__switch">sign up</a></p>
             </div>
 
@@ -89,7 +89,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <div class="u-column2 col-2 enter__wrap">
 
-        <h2 class="enter__caption"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
+        <h2 class="enter__caption"><?php esc_html_e('Register', 'cannab'); ?></h2>
 
         <form method="post"
               class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?> >
@@ -106,7 +106,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                            id="reg_username"
                            autocomplete="username"
                            value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
-                    <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span
+                    <label for="reg_username"><?php esc_html_e('Username', 'cannab'); ?>&nbsp;<span
                                 class="required">*</span></label>
                 </p>
 
@@ -120,7 +120,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                        placeholder="Email address"
                        autocomplete="email"
                        value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
-                <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+                <label for="reg_email"><?php esc_html_e('Email address', 'cannab'); ?>&nbsp;<span class="required">*</span></label>
             </p>
 
             <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
@@ -132,13 +132,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
                            placeholder="Password"
                            id="reg_password"
                            autocomplete="new-password"/>
-                    <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span
+                    <label for="reg_password"><?php esc_html_e('Password', 'cannab'); ?>&nbsp;<span
                                 class="required">*</span></label>
                 </p>
 
             <?php else : ?>
 
-                <p class="enter__note"><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p>
+                <p class="enter__note"><?php esc_html_e('A link to set a new password will be sent to your email address.', 'cannab'); ?></p>
 
             <?php endif; ?>
 
@@ -149,7 +149,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 <button type="submit"
                         class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit"
                         name="register"
-                        value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Register', 'woocommerce'); ?></button>
+                        value="<?php esc_attr_e('Register', 'cannab'); ?>"><?php esc_html_e('Register', 'cannab'); ?></button>
 
             <p class="enter__footer">Already have an account? <a href="#" class="enter__switch">sign IN</a></p>
             </p>

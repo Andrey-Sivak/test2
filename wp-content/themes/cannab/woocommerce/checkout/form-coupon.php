@@ -25,7 +25,7 @@ if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 
 <form class="checkout_coupon woocommerce-form-coupon" method="post">
 
-	<!--<p class="woocommerce-form-coupon__note"><?php /*esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); */?></p>-->
+	<!--<p class="woocommerce-form-coupon__note"><?php /*esc_html_e( 'If you have a coupon code, please apply it below.', 'cannab' ); */?></p>-->
 
     <div class="woocommerce-form-coupon__form-wrap">
         <p class="form-row form-row-first">

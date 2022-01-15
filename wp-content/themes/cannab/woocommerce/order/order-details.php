@@ -47,10 +47,10 @@ if ( $show_downloads ) {
 
 		<thead>
 			<tr>
-				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Items Summary', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'QTY', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total price', 'woocommerce' ); ?></th>
+				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Items Summary', 'cannab' ); ?></th>
+				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'QTY', 'cannab' ); ?></th>
+				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Price', 'cannab' ); ?></th>
+				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total price', 'cannab' ); ?></th>
 			</tr>
 		</thead>
 

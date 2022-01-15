@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-14T01:23:40+00:00\n"
+"POT-Creation-Date: 2022-01-14T19:35:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: cannab\n"
@@ -52,6 +52,10 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
+#: blog.php:43
+msgid "Recent posts"
+msgstr ""
+
 #. translators: 1: title.
 #: comments.php:35
 msgid "One thought on &ldquo;%1$s&rdquo;"
@@ -67,6 +71,41 @@ msgstr[1] ""
 
 #: comments.php:68
 msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:18
+msgid ""
+"DISCLAIMER\n"
+"            <br><br>Getcannab and its materials are not intended to treat, diagnose, cure or prevent any disease. The\n"
+"            information and products presented on this site are not intended for medical use nor do they make any\n"
+"            medical claims. Always seek the advice of your physician or another qualified healthcare provider for any\n"
+"            questions you have regarding a pre-existing medical condition, are pregnant and/or are breastfeeding, and\n"
+"            before undertaking any diet, exercise or other health related program."
+msgstr ""
+
+#: footer.php:26
+msgid "Quick Links"
+msgstr ""
+
+#: footer.php:40
+msgid "Terms & Policy"
+msgstr ""
+
+#: footer.php:54
+msgid "Don’t miss the newest products"
+msgstr ""
+
+#: footer.php:59
+#: front-page.php:98
+msgid "Subscribe"
+msgstr ""
+
+#: front-page.php:18
+msgid "Choose Category"
+msgstr ""
+
+#: front-page.php:70
+msgid "Our Features"
 msgstr ""
 
 #: functions.php:54
@@ -91,6 +130,18 @@ msgstr ""
 
 #: functions.php:144
 msgid "Add widgets here."
+msgstr ""
+
+#: header.php:165
+msgid "You are not old enough to view this content"
+msgstr ""
+
+#: header.php:171
+msgid "You must be over 21 years old to visit this site"
+msgstr ""
+
+#: header.php:172
+msgid "Please, verify your age"
 msgstr ""
 
 #. translators: %s: post date.
@@ -157,6 +208,14 @@ msgstr ""
 msgid "No woocommerce widgets added"
 msgstr ""
 
+#: single.php:26
+msgid "Home"
+msgstr ""
+
+#: single.php:51
+msgid "Related posts"
+msgstr ""
+
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -184,19 +243,390 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
+#: template-parts/post-add-template.php:7
+msgid "Learn more"
+msgstr ""
+
+#: template-parts/post-template.php:30
+msgid "READ ALL ARTICLE"
+msgstr ""
+
 #: woocommerce/archive-product.php:41
 msgid "Filter"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:25
+msgid "Your Order"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:30
+#: woocommerce/cart/cart-totals.php:31
+#: woocommerce/cart/cart.php:175
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:52
+#: woocommerce/cart/cart-totals.php:53
+msgid "Shipping"
+msgstr ""
+
+#. translators: %s location.
+#: woocommerce/cart/cart-totals.php:72
+msgid "(estimated for %s)"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:98
+#: woocommerce/cart/cart-totals.php:99
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:109
+#: woocommerce/cart/cart-totals.php:110
+msgid "Enter promo code:"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:111
+#: woocommerce/checkout/form-coupon.php:44
+#: woocommerce/checkout/form-coupon.php:45
+msgid "Apply"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:116
+msgid "Update cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:133
+msgid "Product"
+msgstr ""
+
+#: woocommerce/cart/cart.php:150
+msgid "Available on backorder"
+msgstr ""
+
+#. translators: %s: Quantity.
+#: woocommerce/cart/cart.php:154
+#: woocommerce/global/quantity-input.php:28
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/cart/cart.php:189
+#: woocommerce/cart/mini-cart.php:85
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:123
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/proceed-to-checkout-button.php:26
+msgid "checkout"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:44
+msgid "Create an account?"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:24
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:41
+msgid "Billing &amp; Shipping"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:45
+msgid "Billing details"
 msgstr ""
 
 #: woocommerce/checkout/form-coupon.php:35
 msgid "Enter promo code"
 msgstr ""
 
-#: woocommerce/checkout/form-coupon.php:44
-#: woocommerce/checkout/form-coupon.php:45
-msgid "Apply"
+#: woocommerce/checkout/payment.php:34
+msgid "Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:34
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#. translators: $1 and $2 opening and closing emphasis tags respectively
+#: woocommerce/checkout/payment.php:43
+msgid "Since your browser does not support JavaScript, or it is disabled, please ensure you click the %1$sUpdate Totals%2$s button before placing your order. You may be charged more than the amount stated above if you fail to do so."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:45
+msgid "Update totals"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:31
+msgid "Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:34
+msgid "Pay"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:36
+msgid "My account"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:42
+#: woocommerce/checkout/thankyou.php:128
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:53
+msgid "Order Summary"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:58
+msgid "Order number:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:63
+msgid "Date:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:69
+msgid "Email:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:76
+msgid "Payment method:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:84
+msgid "Shipping:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:90
+msgid "Subotal:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:97
+msgid "Delivery Address"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:100
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:103
+msgid "Country / Region"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:108
+msgid "Street address"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:113
+msgid "Postcode"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:118
+msgid "Town / City"
+msgstr ""
+
+#: woocommerce/content-single-product.php:77
+#: woocommerce/content-single-product.php:83
+msgid "sold by %s"
+msgstr ""
+
+#. translators: %s: Quantity.
+#: woocommerce/global/quantity-input.php:28
+msgid "%s quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:42
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:24
+msgid "Shop order"
 msgstr ""
 
 #: woocommerce/myaccount/form-login.php:32
 msgid "Welcome back"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:46
+msgid "Username or email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:56
+#: woocommerce/myaccount/form-login.php:135
+msgid "Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:70
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:73
+msgid "Forgot your password?"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:78
+msgid "Log in"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:92
+#: woocommerce/myaccount/form-login.php:152
+msgid "Register"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:109
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:123
+msgid "Email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:141
+msgid "A link to set a new password will be sent to your email address."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:27
+msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:32
+msgid "Username or email"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:42
+msgid "Reset password"
+msgstr ""
+
+#: woocommerce/myaccount/form-reset-password.php:25
+msgid "Enter a new password below."
+msgstr ""
+
+#: woocommerce/myaccount/form-reset-password.php:29
+msgid "New password"
+msgstr ""
+
+#: woocommerce/myaccount/form-reset-password.php:33
+msgid "Re-enter new password"
+msgstr ""
+
+#: woocommerce/myaccount/form-reset-password.php:45
+msgid "Save"
+msgstr ""
+
+#: woocommerce/myaccount/lost-password-confirmation.php:20
+msgid "Password reset email has been sent."
+msgstr ""
+
+#: woocommerce/myaccount/lost-password-confirmation.php:25
+msgid "A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset."
+msgstr ""
+
+#: woocommerce/order/order-details.php:50
+msgid "Items Summary"
+msgstr ""
+
+#: woocommerce/order/order-details.php:51
+msgid "QTY"
+msgstr ""
+
+#: woocommerce/order/order-details.php:52
+msgid "Price"
+msgstr ""
+
+#: woocommerce/order/order-details.php:53
+msgid "Total price"
+msgstr ""
+
+#. translators: %s is product title
+#: woocommerce/single-product-reviews.php:40
+msgid "You're reviewing: &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: %s is product title
+#: woocommerce/single-product-reviews.php:40
+msgid "Be the first to review &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: %s is product title
+#: woocommerce/single-product-reviews.php:42
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:46
+msgid "Submit"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:54
+msgid "Name"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+msgid "Email"
+msgstr ""
+
+#. translators: %s opening and closing link tags respectively
+#: woocommerce/single-product-reviews.php:85
+msgid "You must be %1$slogged in%2$s to post a review."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:90
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:91
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:92
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:93
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:94
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:95
+msgid "Very poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:99
+msgid "Your review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:106
+msgid "Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:131
+msgid "There are no reviews yet."
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:46
+msgid "Awaiting product image"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:36
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:42
+msgid "%s REVIEW"
+msgid_plural "%s REVIEWS"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/review-meta.php:27
+msgid "Your review is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review-meta.php:37
+msgid "verified owner"
 msgstr ""

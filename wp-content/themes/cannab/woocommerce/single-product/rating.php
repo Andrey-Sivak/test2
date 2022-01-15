@@ -33,13 +33,13 @@ if ( $rating_count > 0 ) : ?>
 
 	<div class="woocommerce-product-rating">
 		<?php
-    $label = sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $average );
+    $label = sprintf( __( 'Rated %s out of 5', 'cannab' ), $average );
     $html  = '<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $average, $rating_count ) . '</div>';
     echo $html;
     ?>
 		<?php if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
-			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">| <?php printf( _n( '%s REVIEW', '%s REVIEWS', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?></a>
+			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">| <?php printf( _n( '%s REVIEW', '%s REVIEWS', $review_count, 'cannab' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?></a>
 			<?php // phpcs:enable ?>
 		<?php endif ?>
 	</div>

@@ -130,7 +130,7 @@ defined( 'ABSPATH' ) || exit; ?>
               ?>
               </td>
 
-              <td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+              <td class="product-name" data-title="<?php esc_attr_e( 'Product', 'cannab' ); ?>">
                 <p class="product-name-text">
                     <?php
                     if ( ! $product_permalink ) {
@@ -147,11 +147,11 @@ defined( 'ABSPATH' ) || exit; ?>
 
                 // Backorder notification.
                 if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-                    echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+                    echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'cannab' ) . '</p>', $product_id ) );
                 }
                 ?>
                 <div class="product-price-wrap">
-                  <div class="product-price-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+                  <div class="product-price-quantity" data-title="<?php esc_attr_e( 'Quantity', 'cannab' ); ?>">
                       <?php
                       if ( $_product->is_sold_individually() ) {
                           $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -172,7 +172,7 @@ defined( 'ABSPATH' ) || exit; ?>
                       echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
                       ?>
                   </div>
-                  <div class="product-price-coast" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+                  <div class="product-price-coast" data-title="<?php esc_attr_e( 'Subtotal', 'cannab' ); ?>">
                       <?php
                       echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
                       ?>
@@ -186,7 +186,7 @@ defined( 'ABSPATH' ) || exit; ?>
                         sprintf(
                             '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">remove from cart</a>',
                             esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-                            esc_html__( 'Remove this item', 'woocommerce' ),
+                            esc_html__( 'Remove this item', 'cannab' ),
                             esc_attr( $product_id ),
                             esc_attr( $_product->get_sku() )
                         ),
@@ -195,39 +195,6 @@ defined( 'ABSPATH' ) || exit; ?>
                     ?>
                 </span>
               </td>
-              <!--<td class="product-price" data-title="<?php /*esc_attr_e( 'Price', 'woocommerce' ); */?>">
-                <?php
-/*                  echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-                */?>
-              </td>
-
-              <td class="product-quantity" data-title="<?php /*esc_attr_e( 'Quantity', 'woocommerce' ); */?>">
-              <?php
-/*              if ( $_product->is_sold_individually() ) {
-                $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-              } else {
-                $product_quantity = woocommerce_quantity_input(
-                  array(
-                    'input_name'   => "cart[{$cart_item_key}][qty]",
-                    'input_value'  => $cart_item['quantity'],
-                    'max_value'    => $_product->get_max_purchase_quantity(),
-                    'min_value'    => '0',
-                    'product_name' => $_product->get_name(),
-                  ),
-                  $_product,
-                  false
-                );
-              }
-
-              echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-              */?>
-              </td>
-
-              <td class="product-subtotal" data-title="<?php /*esc_attr_e( 'Subtotal', 'woocommerce' ); */?>">
-                <?php
-/*                  echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-                */?>
-              </td>-->
             </tr>
             <?php
           }

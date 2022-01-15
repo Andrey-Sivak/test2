@@ -15,15 +15,15 @@ $empty_footer = is_checkout() || is_account_page();
 <?php if (!$empty_footer) : ?>
 <footer class="container footer">
     <div class="footer__item">
-        <p class="footer__item_text">DISCLAIMER
+        <p class="footer__item_text"><?= esc_attr__('DISCLAIMER
             <br><br>Getcannab and its materials are not intended to treat, diagnose, cure or prevent any disease. The
             information and products presented on this site are not intended for medical use nor do they make any
             medical claims. Always seek the advice of your physician or another qualified healthcare provider for any
             questions you have regarding a pre-existing medical condition, are pregnant and/or are breastfeeding, and
-            before undertaking any diet, exercise or other health related program.</p>
+            before undertaking any diet, exercise or other health related program.', 'cannab'); ?></p>
     </div>
     <div class="footer__item">
-        <p class="footer__item_caption">Quick Links</p>
+        <p class="footer__item_caption"><?= esc_html__('Quick Links', 'cannab'); ?></p>
 
         <?php if (has_nav_menu('header')) :
             wp_nav_menu(
@@ -37,7 +37,7 @@ $empty_footer = is_checkout() || is_account_page();
         <?php endif; ?>
     </div>
     <div class="footer__item">
-        <p class="footer__item_caption">Terms & Policy</p>
+        <p class="footer__item_caption"><?= esc_html__('Terms & Policy', 'cannab'); ?></p>
 
         <?php if (has_nav_menu('header')) :
             wp_nav_menu(
@@ -51,12 +51,12 @@ $empty_footer = is_checkout() || is_account_page();
         <?php endif; ?>
     </div>
     <div class="footer__item">
-        <p class="footer__item_caption">Don’t miss the newest products</p>
+        <p class="footer__item_caption"><?= esc_html__('Don’t miss the newest products', 'cannab'); ?></p>
         <form action="#" class="footer__form">
             <input type="text"
                    placeholder="Email address"
                    class="footer__form_input">
-            <button class="footer__form_btn" type="submit">Subscribe</button>
+            <button class="footer__form_btn" type="submit"><?= esc_html__('Subscribe', 'cannab'); ?></button>
         </form>
     </div>
 </footer>

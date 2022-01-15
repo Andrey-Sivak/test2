@@ -162,14 +162,14 @@
 
 <div class="age-modal">
     <div class="age-modal__content">
-        <p class="age-modal_note">You are not old enough to view this content</p>
+        <p class="age-modal_note"><?= esc_html__('You are not old enough to view this content', 'cannab'); ?></p>
         <figure class="age-modal__logo">
             <img src="<?= get_home_url(); ?>/wp-content/uploads/2021/12/image-16-1.png"
                  width="255"
                  alt="img">
         </figure>
-        <p class="age-modal__title">You must be over 21 years old to visit this site</p>
-        <p class="age-modal__text">Please, verify your age</p>
+        <p class="age-modal__title"><?= esc_html__('You must be over 21 years old to visit this site', 'cannab'); ?></p>
+        <p class="age-modal__text"><?= esc_html__('Please, verify your age', 'cannab'); ?></p>
         <div class="age-modal__btns">
             <a href="#" class="age-modal__btn enter">Yes, I am over 21 - <br>ENTER</a>
             <a href="#" class="age-modal__btn leave">No, I am under 21 - <br>LEAVE</a>

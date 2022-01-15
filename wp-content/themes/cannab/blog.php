@@ -40,7 +40,7 @@ get_header();
       ));
       ?>
 
-    <p class="recent-posts-caption">Recent posts</p>
+    <p class="recent-posts-caption"><?= esc_html__('Recent posts', 'cannab'); ?></p>
     <div class="posts__list">
         <?php foreach ($posts_list as $item) :
             setup_postdata( $post );

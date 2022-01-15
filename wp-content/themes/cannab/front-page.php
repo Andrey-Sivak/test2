@@ -15,7 +15,7 @@ get_header();
     </div>
 
     <div class="container categories">
-        <p class="categories__caption">Choose Category</p>
+        <p class="categories__caption"><?= esc_html__('Choose Category', 'cannab'); ?></p>
         <div class="categories__list">
             <?php
             $args = [
@@ -67,7 +67,7 @@ get_header();
     <div class="features">
         <div class="container features__wrap">
             <div class="features__left">
-                <p class="features__caption">Our Features</p>
+                <p class="features__caption"><?= esc_html__('Our Features', 'cannab'); ?></p>
                 <a href="<?= get_field('about-link-link'); ?>" class="features__btn"><?= get_field('about-link-text'); ?></a>
             </div>
             <div class="features__list">
@@ -95,7 +95,7 @@ get_header();
                 <input type="text"
                        placeholder="Type your email here"
                        class="subscribe__form_input">
-                <button class="subscribe__form_btn">Subscribe</button>
+                <button class="subscribe__form_btn"><?= esc_html__('Subscribe', 'cannab'); ?></button>
             </form>
         </div>
     </div>

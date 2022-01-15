@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if (!$checkout->is_registration_enabled() && $checkout->is_registration_required() && !is_user_logged_in()) {
-    echo esc_html(apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be logged in to checkout.', 'woocommerce')));
+    echo esc_html(apply_filters('woocommerce_checkout_must_be_logged_in_message', __('You must be logged in to checkout.', 'cannab')));
     return;
 }
 
@@ -38,11 +38,11 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
             <div class="col2-set checkout__section" id="customer_details">
                 <?php if (wc_ship_to_billing_address_only() && WC()->cart->needs_shipping()) : ?>
 
-                    <h3><?php esc_html_e('Billing &amp; Shipping', 'woocommerce'); ?></h3>
+                    <h3><?php esc_html_e('Billing &amp; Shipping', 'cannab'); ?></h3>
 
                 <?php else : ?>
 
-                    <h3 class="checkout__section_caption"><?php esc_html_e('Billing details', 'woocommerce'); ?><span
+                    <h3 class="checkout__section_caption"><?php esc_html_e('Billing details', 'cannab'); ?><span
                                 class="num">1</span></h3>
 
                 <?php endif; ?>

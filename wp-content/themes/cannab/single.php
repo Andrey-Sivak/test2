@@ -23,7 +23,7 @@ get_header();
         <div class="post__title-block">
           <h1 class="post__caption"><?= the_title(); ?></h1>
           <div class="post__title-block_breadcrumbs">
-            <a href="<?= get_home_url(); ?>" class="post__title-block_breadcrumb">Home</a>
+            <a href="<?= get_home_url(); ?>" class="post__title-block_breadcrumb"><?= esc_html__('Home', 'cannab'); ?></a>
             <a href="<?= esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>" class="post__title-block_breadcrumb">Blog</a>
             <p class="post__title-block_breadcrumb"><?php the_title(); ?></p>
           </div>
@@ -48,7 +48,7 @@ get_header();
         ]); ?>
 
       <div class="posts">
-        <p class="recent-posts-caption">Related posts</p>
+        <p class="recent-posts-caption"><?= esc_html__('Related posts', 'cannab'); ?></p>
         <div class="posts__list">
             <?php foreach ($posts_list as $item) :
                 setup_postdata( $post );
